@@ -1,25 +1,25 @@
 ---
 name: search
-description: "Direct place search by name or type. Fast, structured lookup without AI processing. Use when you know exactly what you're looking for (e.g., 'Starbucks', 'gas station'). For natural language queries like 'quiet cafes with good wifi', use /query instead."
+description: "Locate places using flexible query formats - free-form search or structured address components. Returns coordinates, addresses, and optional street-level photos. Use for geocoding addresses or finding specific named places."
 ---
 
-# Search - Direct Place Lookup
+# Search - Flexible Place Lookup
 
-Fast, direct place search by name or type. Returns matching places without AI interpretation or ranking.
+Locate places using free-form queries or structured address components. Supports geocoding, place lookup, and optional street-level imagery.
 
 ## Search vs Query
 
 | Feature | `/search` | `/query` |
 |---------|-----------|----------|
-| Speed | Faster | Slower (AI processing) |
-| Input | Exact names/types | Natural language |
+| Method | POST | GET |
+| Input | Free-form OR structured address | Natural language with context |
+| Coordinates | Returns them (geocoding) | Can auto-generate for search center |
 | AI Ranking | No | Yes |
-| Coordinate Generation | No (required) | Yes (auto-generates for known locations) |
-| Answer Generation | No | Yes (optional) |
-| Best For | "Starbucks", "pharmacy" | "quiet cafes with good wifi near Times Square" |
+| Photos | Optional street-level imagery | No |
+| Best For | "Eiffel Tower", address lookup | "quiet cafes near Times Square" |
 
-**Use `/search`** when you know the exact place name or type.
-**Use `/query`** when you need natural language understanding or AI features.
+**Use `/search`** for geocoding addresses or finding specific named places.
+**Use `/query`** for natural language queries with AI ranking.
 
 ## Setup
 
@@ -41,98 +41,103 @@ Fast, direct place search by name or type. Returns matching places without AI in
 ### Via Shell Script
 
 ```bash
-# Search for a specific place by name
-./scripts/search.sh '{"name": "Starbucks", "lat": 40.7589, "lon": -73.9851, "radius": 1000}'
+# Free-form search for a landmark
+./scripts/search.sh '{"query": "Eiffel Tower"}'
 
-# Search by place type
-./scripts/search.sh '{"type": "pharmacy", "lat": 40.7589, "lon": -73.9851, "limit": 10}'
+# Search with street-level photos
+./scripts/search.sh '{"query": "Empire State Building", "include_photos": true}'
 
-# Search with both name and type
-./scripts/search.sh '{"name": "Whole Foods", "type": "supermarket", "lat": 40.7128, "lon": -74.0060}'
+# Structured address search
+./scripts/search.sh '{"street": "1600 Pennsylvania Avenue", "city": "Washington", "state": "DC", "country": "USA"}'
+
+# Search by city
+./scripts/search.sh '{"city": "San Francisco", "state": "California", "limit": 5}'
 ```
 
 ### Via curl
 
 ```bash
-curl -H "X-API-Key: $CAMINO_API_KEY" \
-  "https://api.getcamino.ai/search?name=Starbucks&lat=40.7589&lon=-73.9851&radius=1000"
+curl -X POST -H "X-API-Key: $CAMINO_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"query": "Eiffel Tower", "include_photos": true}' \
+  "https://api.getcamino.ai/search"
 ```
 
 ## Parameters
 
 | Parameter | Type | Required | Default | Description |
 |-----------|------|----------|---------|-------------|
-| name | string | No* | - | Place name to search for (e.g., "Starbucks", "Central Park") |
-| type | string | No* | - | OSM place type (e.g., "cafe", "restaurant", "pharmacy", "hotel") |
-| lat | float | Yes | - | Latitude for search center |
-| lon | float | Yes | - | Longitude for search center |
-| radius | int | No | 1000 | Search radius in meters (100-50000) |
-| limit | int | No | 20 | Maximum results (1-100) |
-| offset | int | No | 0 | Pagination offset |
+| query | string | No* | - | Free-form search (e.g., "Eiffel Tower", "Central Park") |
+| amenity | string | No | - | Amenity/POI type |
+| street | string | No | - | Street name and number |
+| city | string | No | - | City name |
+| county | string | No | - | County name |
+| state | string | No | - | State or province |
+| country | string | No | - | Country name or code |
+| postalcode | string | No | - | Postal/ZIP code |
+| limit | int | No | 10 | Maximum results (1-50) |
+| include_photos | bool | No | false | Include street-level imagery |
+| photo_radius | int | No | 100 | Photo search radius in meters (10-500) |
+| mode | string | No | "basic" | "basic" or "advanced" search depth |
 
-*At least one of `name` or `type` is required.
+*Either `query` or at least one address component is required.
 
 ## Response Format
 
 ```json
-{
-  "results": [
-    {
-      "name": "Starbucks",
-      "lat": 40.7601,
-      "lon": -73.9847,
-      "type": "cafe",
-      "distance_m": 150,
-      "address": "1585 Broadway, New York, NY 10036",
-      "osm_id": "node/123456789",
-      "tags": {
-        "brand": "Starbucks",
-        "cuisine": "coffee_shop",
-        "opening_hours": "Mo-Fr 06:00-22:00; Sa-Su 07:00-21:00"
+[
+  {
+    "display_name": "Eiffel Tower, 5 Avenue Anatole France, 75007 Paris, France",
+    "lat": 48.8584,
+    "lon": 2.2945,
+    "type": "tourism",
+    "importance": 0.95,
+    "address": {
+      "tourism": "Eiffel Tower",
+      "road": "Avenue Anatole France",
+      "city": "Paris",
+      "country": "France",
+      "postcode": "75007"
+    },
+    "photos": [
+      {
+        "url": "https://...",
+        "lat": 48.8580,
+        "lon": 2.2948,
+        "heading": 45
       }
-    }
-  ],
-  "pagination": {
-    "total_results": 12,
-    "limit": 20,
-    "offset": 0,
-    "has_more": false
+    ],
+    "has_street_imagery": true
   }
-}
+]
 ```
-
-## Common Place Types
-
-| Category | Types |
-|----------|-------|
-| Food & Drink | cafe, restaurant, bar, pub, fast_food, bakery |
-| Shopping | supermarket, convenience, pharmacy, clothes, mall |
-| Services | bank, atm, post_office, hospital, clinic |
-| Transport | bus_stop, subway_entrance, parking, fuel |
-| Accommodation | hotel, hostel, motel, guest_house |
-| Leisure | park, gym, cinema, museum, theatre |
 
 ## Examples
 
-### Find nearby pharmacies
+### Geocode an address
 ```bash
-./scripts/search.sh '{"type": "pharmacy", "lat": 40.7128, "lon": -74.0060, "radius": 500}'
+./scripts/search.sh '{"street": "350 Fifth Avenue", "city": "New York", "state": "NY"}'
 ```
 
-### Find a specific restaurant chain
+### Find a landmark with photos
 ```bash
-./scripts/search.sh '{"name": "Chipotle", "lat": 40.7589, "lon": -73.9851, "limit": 5}'
+./scripts/search.sh '{"query": "Statue of Liberty", "include_photos": true, "photo_radius": 200}'
 ```
 
-### Find hotels in an area
+### Search by postal code
 ```bash
-./scripts/search.sh '{"type": "hotel", "lat": 48.8566, "lon": 2.3522, "radius": 2000, "limit": 20}'
+./scripts/search.sh '{"postalcode": "90210", "country": "USA"}'
+```
+
+### Advanced mode for richer data
+```bash
+./scripts/search.sh '{"query": "Times Square", "mode": "advanced", "include_photos": true}'
 ```
 
 ## Best Practices
 
-- Use `/search` for exact matches and known place names/types
-- Use `/query` when you need natural language interpretation
-- Always provide `lat` and `lon` - search requires explicit coordinates
-- Use specific place types for better results (e.g., "cafe" instead of "food")
-- Combine `name` and `type` for more precise results
+- Use `query` for landmarks, POIs, and well-known places
+- Use structured address fields for precise geocoding
+- Enable `include_photos` when you need visual context
+- Use `mode: "advanced"` for web-enriched place data
+- Combine address components for more accurate results

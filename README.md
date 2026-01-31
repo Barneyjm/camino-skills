@@ -29,12 +29,16 @@ claude mcp add camino-skills https://github.com/camino-ai/skills
 
 ## Available Skills
 
-### `/search` - Direct Place Lookup
+### `/search` - Geocoding & Place Lookup
 
-Fast, direct search by place name or type. No AI processing - requires explicit coordinates.
+Locate places using free-form queries or structured address components. Returns coordinates and optional street-level photos.
 
 ```bash
-./skills/camino/search/scripts/search.sh '{"name": "Starbucks", "lat": 40.7589, "lon": -73.9851, "limit": 5}'
+# Free-form search
+./skills/camino/search/scripts/search.sh '{"query": "Eiffel Tower", "include_photos": true}'
+
+# Structured address
+./skills/camino/search/scripts/search.sh '{"street": "350 Fifth Ave", "city": "New York", "state": "NY"}'
 ```
 
 ### `/query` - Natural Language Place Search
@@ -49,9 +53,9 @@ Search using natural language with AI ranking and auto-generated coordinates for
 
 | Use `/search` when... | Use `/query` when... |
 |-----------------------|----------------------|
-| You know the exact name ("Starbucks") | You need natural language ("quiet cafes") |
-| You have coordinates | You want AI to find coordinates |
-| You want fastest results | You want AI-ranked relevance |
+| Geocoding addresses | Natural language ("quiet cafes with wifi") |
+| Finding specific landmarks | Searching near a location |
+| You need street-level photos | You want AI-ranked relevance |
 
 ### `/relationship` - Spatial Calculations
 

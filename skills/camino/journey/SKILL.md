@@ -67,12 +67,12 @@ curl -X POST -H "X-API-Key: $CAMINO_API_KEY" \
 
 ## Parameters
 
-| Field | Type | Required | Description |
-|-------|------|----------|-------------|
-| waypoints | array | Yes | List of waypoints with lat, lon, and purpose (min 2) |
-| constraints.transport | string | No | "foot", "car", or "bike" |
-| constraints.time_budget | string | No | Time constraint (e.g., "2 hours", "90 minutes") |
-| constraints.preferences | array | No | Route preferences |
+| Field | Type | Required | Default | Description |
+|-------|------|----------|---------|-------------|
+| waypoints | array | Yes | - | List of waypoints with lat, lon, and purpose (min 2) |
+| constraints.transport | string | No | "walking" | Transport mode: "walking", "car", or "bike" |
+| constraints.time_budget | string | No | - | Time constraint (e.g., "2 hours", "90 minutes") |
+| constraints.preferences | array | No | [] | Route preferences |
 
 ### Waypoint Object
 
