@@ -20,7 +20,7 @@
       },
       "homepage": "https://getcamino.ai",
       "repository": "https://github.com/Barneyjm/camino-skills",
-      "license": "Proprietary",
+      "license": "MIT",
       "keywords": ["location", "maps", "places", "routing", "spatial", "geolocation", "osm", "openstreetmap", "agents"],
       "category": "external-integrations",
       "tags": ["location-intelligence", "maps", "places", "routing", "spatial-reasoning"]

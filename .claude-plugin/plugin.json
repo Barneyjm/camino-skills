@@ -9,7 +9,7 @@
   },
   "homepage": "https://docs.getcamino.ai",
   "repository": "https://github.com/Barneyjm/camino-skills",
-  "license": "Proprietary",
+  "license": "MIT",
   "keywords": ["location", "maps", "places", "routing", "spatial", "geolocation", "osm", "openstreetmap", "agents"],
   "skills": "./skills/"
 }

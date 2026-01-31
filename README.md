@@ -131,4 +131,4 @@ Get detailed routing with turn-by-turn directions between two points.
 
 ## License
 
-Proprietary - See [LICENSE](LICENSE) for details.
+MIT
