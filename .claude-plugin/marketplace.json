@@ -1,0 +1,29 @@
+{
+  "name": "camino-ai-plugins",
+  "owner": {
+    "name": "Camino AI",
+    "email": "hello@getcamino.ai"
+  },
+  "metadata": {
+    "description": "Official Camino AI plugin for Claude Code - location intelligence, place search, routing, and spatial reasoning capabilities",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "camino-ai",
+      "source": "./",
+      "description": "Location intelligence API for AI agents. Search for places using natural language, calculate spatial relationships, plan routes and journeys, and get context about locations.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Camino AI",
+        "email": "hello@getcamino.ai"
+      },
+      "homepage": "https://getcamino.ai",
+      "repository": "https://github.com/Barneyjm/camino-skills",
+      "license": "MIT",
+      "keywords": ["location", "maps", "places", "routing", "spatial", "geolocation", "osm", "openstreetmap", "agents"],
+      "category": "external-integrations",
+      "tags": ["location-intelligence", "maps", "places", "routing", "spatial-reasoning"]
+    }
+  ]
+}
