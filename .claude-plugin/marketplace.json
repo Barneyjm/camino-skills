@@ -18,9 +18,9 @@
         "name": "Camino AI",
         "email": "hello@getcamino.ai"
       },
-      "homepage": "https://github.com/camino-ai/skills",
-      "repository": "https://github.com/camino-ai/skills",
-      "license": "MIT",
+      "homepage": "https://getcamino.ai",
+      "repository": "https://github.com/Barneyjm/camino-skills",
+      "license": "Proprietary",
       "keywords": ["location", "maps", "places", "routing", "spatial", "geolocation", "osm", "openstreetmap", "agents"],
       "category": "external-integrations",
       "tags": ["location-intelligence", "maps", "places", "routing", "spatial-reasoning"]

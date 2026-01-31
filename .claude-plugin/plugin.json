@@ -8,8 +8,8 @@
     "url": "https://getcamino.ai"
   },
   "homepage": "https://docs.getcamino.ai",
-  "repository": "https://github.com/camino-ai/skills",
-  "license": "MIT",
+  "repository": "https://github.com/Barneyjm/camino-skills",
+  "license": "Proprietary",
   "keywords": ["location", "maps", "places", "routing", "spatial", "geolocation", "osm", "openstreetmap", "agents"],
   "skills": "./skills/"
 }

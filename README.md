@@ -9,7 +9,7 @@ Location intelligence for AI agents. Search for places using natural language, c
 npm install @anthropic-ai/claude-code
 
 # Or add skills directly to Claude Code
-claude mcp add camino-skills https://github.com/camino-ai/skills
+claude mcp add camino-skills https://github.com/Barneyjm/camino-skills
 ```
 
 ## Setup
@@ -131,4 +131,4 @@ Get detailed routing with turn-by-turn directions between two points.
 
 ## License
 
-MIT
+Proprietary - See [LICENSE](LICENSE) for details.
