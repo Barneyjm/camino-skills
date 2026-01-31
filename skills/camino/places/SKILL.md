@@ -1,15 +1,15 @@
 ---
-name: search
+name: places
 description: "Locate places using flexible query formats - free-form search or structured address components. Returns coordinates, addresses, and optional street-level photos. Use for geocoding addresses or finding specific named places."
 ---
 
-# Search - Flexible Place Lookup
+# Places - Flexible Place Lookup
 
 Locate places using free-form queries or structured address components. Supports geocoding, place lookup, and optional street-level imagery.
 
-## Search vs Query
+## Places vs Query
 
-| Feature | `/search` | `/query` |
+| Feature | `/places` | `/query` |
 |---------|-----------|----------|
 | Method | POST | GET |
 | Input | Free-form OR structured address | Natural language with context |
@@ -18,7 +18,7 @@ Locate places using free-form queries or structured address components. Supports
 | Photos | Optional street-level imagery | No |
 | Best For | "Eiffel Tower", address lookup | "quiet cafes near Times Square" |
 
-**Use `/search`** for geocoding addresses or finding specific named places.
+**Use `/places`** for geocoding addresses or finding specific named places.
 **Use `/query`** for natural language queries with AI ranking.
 
 ## Setup
@@ -42,19 +42,21 @@ Locate places using free-form queries or structured address components. Supports
 
 ```bash
 # Free-form search for a landmark
-./scripts/search.sh '{"query": "Eiffel Tower"}'
+./scripts/places.sh '{"query": "Eiffel Tower"}'
 
 # Search with street-level photos
-./scripts/search.sh '{"query": "Empire State Building", "include_photos": true}'
+./scripts/places.sh '{"query": "Empire State Building", "include_photos": true}'
 
 # Structured address search
-./scripts/search.sh '{"street": "1600 Pennsylvania Avenue", "city": "Washington", "state": "DC", "country": "USA"}'
+./scripts/places.sh '{"street": "1600 Pennsylvania Avenue", "city": "Washington", "state": "DC", "country": "USA"}'
 
 # Search by city
-./scripts/search.sh '{"city": "San Francisco", "state": "California", "limit": 5}'
+./scripts/places.sh '{"city": "San Francisco", "state": "California", "limit": 5}'
 ```
 
-### Via curl
+### Via curl (direct API calls)
+
+The skill is named `places` but calls the `/search` API endpoint. For direct API calls:
 
 ```bash
 curl -X POST -H "X-API-Key: $CAMINO_API_KEY" \
@@ -116,22 +118,22 @@ curl -X POST -H "X-API-Key: $CAMINO_API_KEY" \
 
 ### Geocode an address
 ```bash
-./scripts/search.sh '{"street": "350 Fifth Avenue", "city": "New York", "state": "NY"}'
+./scripts/places.sh '{"street": "350 Fifth Avenue", "city": "New York", "state": "NY"}'
 ```
 
 ### Find a landmark with photos
 ```bash
-./scripts/search.sh '{"query": "Statue of Liberty", "include_photos": true, "photo_radius": 200}'
+./scripts/places.sh '{"query": "Statue of Liberty", "include_photos": true, "photo_radius": 200}'
 ```
 
 ### Search by postal code
 ```bash
-./scripts/search.sh '{"postalcode": "90210", "country": "USA"}'
+./scripts/places.sh '{"postalcode": "90210", "country": "USA"}'
 ```
 
 ### Advanced mode for richer data
 ```bash
-./scripts/search.sh '{"query": "Times Square", "mode": "advanced", "include_photos": true}'
+./scripts/places.sh '{"query": "Times Square", "mode": "advanced", "include_photos": true}'
 ```
 
 ## Best Practices
