@@ -29,13 +29,29 @@ claude mcp add camino-skills https://github.com/camino-ai/skills
 
 ## Available Skills
 
-### `/query` - Natural Language Place Search
+### `/search` - Direct Place Lookup
 
-Search for places using natural language. AI automatically generates coordinates for known locations.
+Fast, direct search by place name or type. No AI processing - requires explicit coordinates.
 
 ```bash
-./skills/camino/query/scripts/query.sh '{"query": "coffee shops near Times Square", "limit": 5}'
+./skills/camino/search/scripts/search.sh '{"name": "Starbucks", "lat": 40.7589, "lon": -73.9851, "limit": 5}'
 ```
+
+### `/query` - Natural Language Place Search
+
+Search using natural language with AI ranking and auto-generated coordinates for known locations.
+
+```bash
+./skills/camino/query/scripts/query.sh '{"query": "quiet coffee shops with wifi near Times Square", "limit": 5}'
+```
+
+#### Search vs Query
+
+| Use `/search` when... | Use `/query` when... |
+|-----------------------|----------------------|
+| You know the exact name ("Starbucks") | You need natural language ("quiet cafes") |
+| You have coordinates | You want AI to find coordinates |
+| You want fastest results | You want AI-ranked relevance |
 
 ### `/relationship` - Spatial Calculations
 
