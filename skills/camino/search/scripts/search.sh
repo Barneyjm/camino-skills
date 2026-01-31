@@ -4,6 +4,14 @@
 
 set -e
 
+# Check dependencies
+for cmd in jq curl; do
+    if ! command -v "$cmd" &> /dev/null; then
+        echo "Error: '$cmd' is required but not installed" >&2
+        exit 1
+    fi
+done
+
 # Check if input is provided
 if [ -z "$1" ]; then
     echo "Error: JSON input required" >&2

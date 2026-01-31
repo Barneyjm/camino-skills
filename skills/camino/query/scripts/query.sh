@@ -4,6 +4,14 @@
 
 set -e
 
+# Check dependencies
+for cmd in jq curl; do
+    if ! command -v "$cmd" &> /dev/null; then
+        echo "Error: '$cmd' is required but not installed" >&2
+        exit 1
+    fi
+done
+
 # Check if input is provided
 if [ -z "$1" ]; then
     echo "Error: JSON input required" >&2
@@ -35,13 +43,19 @@ if [ -z "$QUERY" ] && [ -z "$OSM_IDS" ]; then
     exit 1
 fi
 
-# Build query string from JSON input
+# Build query string from JSON input using jq --arg for proper encoding
 build_query_string() {
     local params=""
 
-    # Required/main parameters
-    [ -n "$QUERY" ] && params="${params}&query=$(echo "$QUERY" | jq -sRr @uri)"
-    [ -n "$OSM_IDS" ] && params="${params}&osm_ids=$(echo "$OSM_IDS" | jq -sRr @uri)"
+    # Required/main parameters (use jq --arg to avoid trailing newline issues)
+    if [ -n "$QUERY" ]; then
+        local encoded_query=$(jq -rn --arg v "$QUERY" '$v|@uri')
+        params="${params}&query=${encoded_query}"
+    fi
+    if [ -n "$OSM_IDS" ]; then
+        local encoded_osm=$(jq -rn --arg v "$OSM_IDS" '$v|@uri')
+        params="${params}&osm_ids=${encoded_osm}"
+    fi
 
     # Optional parameters
     local lat=$(echo "$INPUT" | jq -r '.lat // empty')
@@ -61,7 +75,10 @@ build_query_string() {
     [ -n "$limit" ] && params="${params}&limit=${limit}"
     [ -n "$offset" ] && params="${params}&offset=${offset}"
     [ -n "$answer" ] && params="${params}&answer=${answer}"
-    [ -n "$time" ] && params="${params}&time=$(echo "$time" | jq -sRr @uri)"
+    if [ -n "$time" ]; then
+        local encoded_time=$(jq -rn --arg v "$time" '$v|@uri')
+        params="${params}&time=${encoded_time}"
+    fi
     [ -n "$mode" ] && params="${params}&mode=${mode}"
 
     # Remove leading &
