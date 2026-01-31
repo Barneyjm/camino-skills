@@ -29,16 +29,16 @@ claude mcp add camino-skills https://github.com/Barneyjm/camino-skills
 
 ## Available Skills
 
-### `/search` - Geocoding & Place Lookup
+### `/places` - Geocoding & Place Lookup
 
 Locate places using free-form queries or structured address components. Returns coordinates and optional street-level photos.
 
 ```bash
 # Free-form search
-./skills/camino/search/scripts/search.sh '{"query": "Eiffel Tower", "include_photos": true}'
+./skills/camino/places/scripts/places.sh '{"query": "Eiffel Tower", "include_photos": true}'
 
 # Structured address
-./skills/camino/search/scripts/search.sh '{"street": "350 Fifth Ave", "city": "New York", "state": "NY"}'
+./skills/camino/places/scripts/places.sh '{"street": "350 Fifth Ave", "city": "New York", "state": "NY"}'
 ```
 
 ### `/query` - Natural Language Place Search
@@ -49,9 +49,9 @@ Search using natural language with AI ranking and auto-generated coordinates for
 ./skills/camino/query/scripts/query.sh '{"query": "quiet coffee shops with wifi near Times Square", "limit": 5}'
 ```
 
-#### Search vs Query
+#### Places vs Query
 
-| Use `/search` when... | Use `/query` when... |
+| Use `/places` when... | Use `/query` when... |
 |-----------------------|----------------------|
 | Geocoding addresses | Natural language ("quiet cafes with wifi") |
 | Finding specific landmarks | Searching near a location |
