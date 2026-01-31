@@ -54,7 +54,9 @@ Locate places using free-form queries or structured address components. Supports
 ./scripts/places.sh '{"city": "San Francisco", "state": "California", "limit": 5}'
 ```
 
-### Via curl
+### Via curl (direct API calls)
+
+The skill is named `places` but calls the `/search` API endpoint. For direct API calls:
 
 ```bash
 curl -X POST -H "X-API-Key: $CAMINO_API_KEY" \
