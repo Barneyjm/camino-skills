@@ -1,6 +1,7 @@
 ---
 name: places
 description: "Locate places using flexible query formats - free-form search or structured address components. Returns coordinates, addresses, and optional street-level photos. Use for geocoding addresses or finding specific named places."
+metadata: {"clawdbot":{"emoji":"📌","requires":{"env":["CAMINO_API_KEY"]},"primaryEnv":"CAMINO_API_KEY"}}
 ---
 
 # Places - Flexible Place Lookup

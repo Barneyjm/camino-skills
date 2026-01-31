@@ -1,6 +1,7 @@
 ---
 name: query
 description: "Search for places using natural language with Camino AI's location intelligence API. Returns relevant results with coordinates, distances, and metadata. Use when you need to find real-world locations like restaurants, shops, landmarks, or any point of interest."
+metadata: {"clawdbot":{"emoji":"🔍","requires":{"env":["CAMINO_API_KEY"]},"primaryEnv":"CAMINO_API_KEY"}}
 ---
 
 # Query - Natural Language Place Search
