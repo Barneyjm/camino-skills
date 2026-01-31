@@ -1,0 +1,15 @@
+{
+  "name": "camino-ai",
+  "version": "1.0.0",
+  "description": "Location intelligence API for AI agents. Search for places using natural language, calculate spatial relationships, plan routes and journeys, and get context about locations.",
+  "author": {
+    "name": "Camino AI",
+    "email": "hello@getcamino.ai",
+    "url": "https://getcamino.ai"
+  },
+  "homepage": "https://docs.getcamino.ai",
+  "repository": "https://github.com/camino-ai/skills",
+  "license": "MIT",
+  "keywords": ["location", "maps", "places", "routing", "spatial", "geolocation", "osm", "openstreetmap", "agents"],
+  "skills": "./skills/"
+}
