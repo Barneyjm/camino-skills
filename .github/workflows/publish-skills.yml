@@ -1,11 +1,13 @@
 name: Publish Skills to ClawHub
 
-on:
-  push:
-    branches: [main]
-    paths:
-      - 'skills/**'
-  workflow_dispatch:
+# Disabled until clawhub CLI token auth is fixed
+# on:
+#   push:
+#     branches: [main]
+#     paths:
+#       - 'skills/**'
+#   workflow_dispatch:
+on: workflow_dispatch  # Manual only for now
 
 jobs:
   publish:
