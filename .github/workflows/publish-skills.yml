@@ -20,4 +20,6 @@ jobs:
       - name: Publish to ClawHub
         env:
           CLAWHUB_TOKEN: ${{ secrets.CLAWHUB_TOKEN }}
-        run: npx clawhub@latest sync --all --no-input
+        run: |
+          npx clawhub@latest login --token $CLAWHUB_TOKEN
+          npx clawhub@latest sync --all --no-input --dry-run
