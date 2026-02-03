@@ -5,6 +5,19 @@ Location intelligence for AI agents. Search for places using natural language, c
 ## Installation
 
 ```bash
+# Install all skills from repo
+npx skills add https://github.com/barneyjm/camino-skills
+
+# Or install specific skills
+npx skills add https://github.com/barneyjm/camino-skills --skill [query|places|relationship|context|route|journey]
+
+# Or using clawhub:
+npx clawhub@latest install [query|places|relationship|context|route|journey]
+# pnpm dlx clawhub@latest install [query|places|relationship|context|route|journey]
+# bunx clawhub@latest install [query|places|relationship|context|route|journey]
+```
+
+```bash
 # Install the skills package
 npm install @anthropic-ai/claude-code
 
@@ -106,6 +119,25 @@ Get detailed routing with turn-by-turn directions between two points.
   "end_lat": 40.7589,
   "end_lon": -73.9851,
   "mode": "foot"
+}'
+```
+
+### `/relationship` - Point-to-Point Navigation
+
+Calculate spatial relationships between two points including distance, direction, travel time, and human-readable descriptions.
+
+```bash
+# Calculate relationship between two points
+./scripts/relationship.sh '{
+  "start": {"lat": 40.7128, "lon": -74.0060},
+  "end": {"lat": 40.7589, "lon": -73.9851}
+}'
+
+# Include specific calculations
+./scripts/relationship.sh '{
+  "start": {"lat": 40.7128, "lon": -74.0060},
+  "end": {"lat": 40.7589, "lon": -73.9851},
+  "include": ["distance", "direction", "travel_time", "description"]
 }'
 ```
 
