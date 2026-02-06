@@ -36,7 +36,7 @@ npx clawhub@latest install [skill-name]
 
 ### Core Skills
 
-These are the foundational location intelligence primitives.
+The 6 foundational primitives that map directly to the Camino API — search, geocode, measure, analyze, route, and plan.
 
 | Skill | Description | Example |
 |-------|-------------|---------|
@@ -49,7 +49,7 @@ These are the foundational location intelligence primitives.
 
 ### Composite Skills
 
-Higher-level workflows that combine core skills for specific use cases.
+Opinionated workflows built on top of the core primitives. Each one combines multiple core skills (query, context, route, etc.) into a single purpose-built command.
 
 | Skill | Description | Example |
 |-------|-------------|---------|
