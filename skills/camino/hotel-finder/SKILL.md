@@ -29,8 +29,21 @@ Search for hotels, hostels, and lodging near landmarks, conference venues, or ne
 
 ## Setup
 
-1. Get your API key from [https://app.getcamino.ai](https://app.getcamino.ai)
-2. Add to your `~/.claude/settings.json`:
+**Instant Trial (no signup required):** Get a temporary API key with 25 calls:
+
+```bash
+curl -s -X POST -H "Content-Type: application/json" \
+  -d '{"email": "you@example.com"}' \
+  https://api.getcamino.ai/trial/start
+```
+
+Returns: `{"api_key": "camino-xxx...", "calls_remaining": 25, ...}`
+
+For 1,000 free calls/month, sign up at [https://app.getcamino.ai/skills/activate](https://app.getcamino.ai/skills/activate).
+
+**Add your key to Claude Code:**
+
+Add to your `~/.claude/settings.json`:
 
 ```json
 {
@@ -40,7 +53,7 @@ Search for hotels, hostels, and lodging near landmarks, conference venues, or ne
 }
 ```
 
-3. Restart Claude Code
+Restart Claude Code.
 
 ## Usage
 
