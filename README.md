@@ -9,20 +9,12 @@ Location intelligence for AI agents. Search for places using natural language, c
 npx skills add https://github.com/barneyjm/camino-skills
 
 # Or install specific skills
-npx skills add https://github.com/barneyjm/camino-skills --skill [query|places|relationship|context|route|journey]
+npx skills add https://github.com/barneyjm/camino-skills --skill [skill-name]
 
 # Or using clawhub:
-npx clawhub@latest install [query|places|relationship|context|route|journey]
-# pnpm dlx clawhub@latest install [query|places|relationship|context|route|journey]
-# bunx clawhub@latest install [query|places|relationship|context|route|journey]
-```
-
-```bash
-# Install the skills package
-npm install @anthropic-ai/claude-code
-
-# Or add skills directly to Claude Code
-claude mcp add camino-skills https://github.com/Barneyjm/camino-skills
+npx clawhub@latest install [skill-name]
+# pnpm dlx clawhub@latest install [skill-name]
+# bunx clawhub@latest install [skill-name]
 ```
 
 ## Setup
@@ -42,104 +34,33 @@ claude mcp add camino-skills https://github.com/Barneyjm/camino-skills
 
 ## Available Skills
 
-### `/places` - Geocoding & Place Lookup
+### Core Skills
 
-Locate places using free-form queries or structured address components. Returns coordinates and optional street-level photos.
+These are the foundational location intelligence primitives.
 
-```bash
-# Free-form search
-./skills/camino/places/scripts/places.sh '{"query": "Eiffel Tower", "include_photos": true}'
+| Skill | Description | Example |
+|-------|-------------|---------|
+| `/query` | Natural language place search with AI ranking | `"quiet coffee shops with wifi near Times Square"` |
+| `/places` | Geocoding & place lookup with optional street-level photos | `"Eiffel Tower"` or structured address components |
+| `/relationship` | Distance, direction, and travel time between two points | Calculate commute time between home and office |
+| `/context` | Location analysis with nearby places and area description | Understand what's around a destination |
+| `/route` | Point-to-point navigation with turn-by-turn directions | Walking directions from hotel to conference |
+| `/journey` | Multi-stop trip planning with route optimization | Plan a 3-hour walking tour of Paris landmarks |
 
-# Structured address
-./skills/camino/places/scripts/places.sh '{"street": "350 Fifth Ave", "city": "New York", "state": "NY"}'
-```
+### Composite Skills
 
-### `/query` - Natural Language Place Search
+Higher-level workflows that combine core skills for specific use cases.
 
-Search using natural language with AI ranking and auto-generated coordinates for known locations.
-
-```bash
-./skills/camino/query/scripts/query.sh '{"query": "quiet coffee shops with wifi near Times Square", "limit": 5}'
-```
-
-#### Places vs Query
-
-| Use `/places` when... | Use `/query` when... |
-|-----------------------|----------------------|
-| Geocoding addresses | Natural language ("quiet cafes with wifi") |
-| Finding specific landmarks | Searching near a location |
-| You need street-level photos | You want AI-ranked relevance |
-
-### `/relationship` - Spatial Calculations
-
-Calculate distance, direction, travel time, and descriptions between two points.
-
-```bash
-./skills/camino/relationship/scripts/relationship.sh '{
-  "start": {"lat": 40.7128, "lon": -74.0060},
-  "end": {"lat": 40.7589, "lon": -73.9851}
-}'
-```
-
-### `/context` - Location Analysis
-
-Get comprehensive context about a location including nearby places and area descriptions.
-
-```bash
-./skills/camino/context/scripts/context.sh '{
-  "location": {"lat": 40.7589, "lon": -73.9851},
-  "radius": 500,
-  "context": "lunch options"
-}'
-```
-
-### `/journey` - Multi-Stop Planning
-
-Plan multi-waypoint journeys with route optimization and feasibility analysis.
-
-```bash
-./skills/camino/journey/scripts/journey.sh '{
-  "waypoints": [
-    {"lat": 40.7128, "lon": -74.0060, "purpose": "Start"},
-    {"lat": 40.7484, "lon": -73.9857, "purpose": "Empire State"},
-    {"lat": 40.7614, "lon": -73.9776, "purpose": "Lunch"}
-  ],
-  "constraints": {"transport": "foot", "time_budget": "3 hours"}
-}'
-```
-
-### `/route` - Point-to-Point Navigation
-
-Get detailed routing with turn-by-turn directions between two points.
-
-```bash
-./skills/camino/route/scripts/route.sh '{
-  "start_lat": 40.7128,
-  "start_lon": -74.0060,
-  "end_lat": 40.7589,
-  "end_lon": -73.9851,
-  "mode": "foot"
-}'
-```
-
-### `/relationship` - Point-to-Point Navigation
-
-Calculate spatial relationships between two points including distance, direction, travel time, and human-readable descriptions.
-
-```bash
-# Calculate relationship between two points
-./scripts/relationship.sh '{
-  "start": {"lat": 40.7128, "lon": -74.0060},
-  "end": {"lat": 40.7589, "lon": -73.9851}
-}'
-
-# Include specific calculations
-./scripts/relationship.sh '{
-  "start": {"lat": 40.7128, "lon": -74.0060},
-  "end": {"lat": 40.7589, "lon": -73.9851},
-  "include": ["distance", "direction", "travel_time", "description"]
-}'
-```
+| Skill | Description | Example |
+|-------|-------------|---------|
+| `/real-estate` | Evaluate addresses for home buyers and renters | `"Evaluate 350 Fifth Ave, New York for walkability and schools"` |
+| `/hotel-finder` | Search for hotels and lodging near landmarks or venues | `"Hotels near the convention center in Austin"` |
+| `/ev-charger` | Find EV charging stations along a route or near a destination | `"EV chargers near SFO airport"` |
+| `/school-finder` | Locate schools and universities near any address | `"Elementary schools within 1 mile of 123 Oak St, Palo Alto"` |
+| `/parking-finder` | Find parking garages, lots, and street parking | `"Parking near Madison Square Garden"` |
+| `/fitness-finder` | Search for gyms, yoga studios, pools, and sports facilities | `"Yoga studios near downtown Denver"` |
+| `/safety-checker` | Find 24-hour businesses, transit, police, and hospitals for late-night safety | `"Safe well-lit areas near Penn Station at midnight"` |
+| `/travel-planner` | Plan day trips, walking tours, and multi-stop itineraries | `"Plan a 6-hour walking tour of Rome"` |
 
 ## Free Tier
 

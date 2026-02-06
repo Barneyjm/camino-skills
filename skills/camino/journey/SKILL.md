@@ -6,7 +6,7 @@ metadata: {"clawdbot":{"emoji":"🗺️","requires":{"env":["CAMINO_API_KEY"]},"
 
 ## Installation
 
-**Companion Skills**: This is part of the Camino AI location intelligence suite. Install all 6 skills (query, places, relationship, context, route, journey) for comprehensive coverage.
+**Companion Skills**: This is part of the Camino AI location intelligence suite. Install all available skills (query, places, relationship, context, route, journey, real-estate, hotel-finder, ev-charger, school-finder, parking-finder, fitness-finder, safety-checker, travel-planner) for comprehensive coverage.
 
 ```bash
 # Install all skills from repo

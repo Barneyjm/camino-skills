@@ -1,6 +1,6 @@
 {
   "name": "camino-ai",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Location intelligence API for AI agents. Search for places using natural language, calculate spatial relationships, plan routes and journeys, and get context about locations.",
   "author": {
     "name": "Camino AI",
