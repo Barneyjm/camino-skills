@@ -1,6 +1,6 @@
 #!/bin/bash
-# Camino AI Journey API - Multi-Stop Planning
-# Usage: ./journey.sh '{"waypoints": [{"lat": 40.7128, "lon": -74.0060, "purpose": "Start"}, {"lat": 40.7484, "lon": -73.9857, "purpose": "Empire State"}]}'
+# Camino AI Travel Planner - Plan day trips, walking tours, and multi-stop itineraries
+# Usage: ./travel-planner.sh '{"waypoints": [{"lat": 48.8584, "lon": 2.2945, "purpose": "Eiffel Tower"}, {"lat": 48.8606, "lon": 2.3376, "purpose": "Louvre"}], "constraints": {"transport": "foot", "time_budget": "4 hours"}}'
 
 set -e
 
@@ -15,7 +15,7 @@ done
 # Check if input is provided
 if [ -z "$1" ]; then
     echo "Error: JSON input required" >&2
-    echo "Usage: ./journey.sh '{\"waypoints\": [{\"lat\": 40.7128, \"lon\": -74.0060, \"purpose\": \"Start\"}, {\"lat\": 40.7484, \"lon\": -73.9857, \"purpose\": \"End\"}]}'" >&2
+    echo "Usage: ./travel-planner.sh '{\"waypoints\": [{\"lat\": 48.8584, \"lon\": 2.2945, \"purpose\": \"Eiffel Tower\"}, {\"lat\": 48.8606, \"lon\": 2.3376, \"purpose\": \"Louvre\"}]}'" >&2
     exit 1
 fi
 

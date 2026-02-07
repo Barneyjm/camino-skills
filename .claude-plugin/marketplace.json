@@ -6,14 +6,14 @@
   },
   "metadata": {
     "description": "Official Camino AI plugin for Claude Code - location intelligence, place search, routing, and spatial reasoning capabilities",
-    "version": "1.0.0"
+    "version": "2.0.0"
   },
   "plugins": [
     {
       "name": "camino-ai",
       "source": "./",
       "description": "Location intelligence API for AI agents. Search for places using natural language, calculate spatial relationships, plan routes and journeys, and get context about locations.",
-      "version": "1.0.0",
+      "version": "2.0.0",
       "author": {
         "name": "Camino AI",
         "email": "hello@getcamino.ai"
