@@ -17,10 +17,23 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Publish to ClawHub
+      - name: Verify ClawHub token
         env:
           CLAWHUB_TOKEN: ${{ secrets.CLAWHUB_TOKEN }}
         run: |
-          echo "Token prefix: ${CLAWHUB_TOKEN:0:10}..."
+          if [ -z "$CLAWHUB_TOKEN" ]; then
+            echo "::error::CLAWHUB_TOKEN secret is not set. Add it in Settings > Secrets and variables > Actions."
+            exit 1
+          fi
+          echo "Token is configured (prefix: ${CLAWHUB_TOKEN:0:4}...)"
+
+      - name: Login to ClawHub
+        env:
+          CLAWHUB_TOKEN: ${{ secrets.CLAWHUB_TOKEN }}
+        run: |
           npx clawhub@latest login --token "$CLAWHUB_TOKEN" --no-browser
+          npx clawhub@latest whoami
+
+      - name: Sync skills (dry run)
+        run: |
           npx clawhub@latest sync --all --no-input --dry-run
