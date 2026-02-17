@@ -1,7 +1,7 @@
 ---
 name: hotel-finder
 description: "Search for hotels, hostels, and lodging near landmarks, conference venues, or neighborhoods using Camino AI's location intelligence with AI-powered ranking."
-metadata: {"clawdbot":{"emoji":"🏨","requires":{"env":["CAMINO_API_KEY"]},"primaryEnv":"CAMINO_API_KEY"}}
+metadata: {"clawdbot":{"emoji":"🏨","requires":{"env":["CAMINO_API_KEY"],"binaries":["curl","jq"]},"primaryEnv":"CAMINO_API_KEY"}}
 ---
 
 ## Installation
