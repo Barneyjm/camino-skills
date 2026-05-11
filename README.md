@@ -19,17 +19,7 @@ npx clawhub@latest install [skill-name]
 
 ## Setup
 
-**Instant Trial (no signup required):** Get a temporary API key with 25 calls:
-
-```bash
-curl -s -X POST -H "Content-Type: application/json" \
-  -d '{"email": "you@example.com"}' \
-  https://api.getcamino.ai/trial/start
-```
-
-Returns: `{"api_key": "camino-xxx...", "calls_remaining": 25, ...}`
-
-For 1,000 free calls/month, sign up at [https://app.getcamino.ai/skills/activate](https://app.getcamino.ai/skills/activate).
+These skills shell out to `curl` and authenticate via the `CAMINO_API_KEY` environment variable. Sign up at [https://app.getcamino.ai/skills/activate](https://app.getcamino.ai/skills/activate) for 100 free calls/month and an API key.
 
 **Add your key to Claude Code:**
 
@@ -44,6 +34,8 @@ Add to your `~/.claude/settings.json`:
 ```
 
 Restart Claude Code.
+
+**Alternative — pay-per-request via [x402](https://x402.org):** Camino's paid endpoints also accept HTTP 402 payments in USDC on Base ($0.001/request) from any x402-capable client, with no signup or API key. These skills don't use this path; it's for agents and clients that speak x402 natively.
 
 ## Available Skills
 
@@ -77,7 +69,7 @@ Opinionated workflows built on top of the core primitives. Each one combines mul
 
 ## Free Tier
 
-- 1,000 API calls per month
+- 100 API calls per month
 - All endpoints included
 - No credit card required
 
@@ -85,7 +77,7 @@ Opinionated workflows built on top of the core primitives. Each one combines mul
 
 | Tier | Rate Limit | Monthly Calls | Price |
 |------|------------|---------------|-------|
-| Free | 30/minute | 1,000 | $0 |
+| Free | 30/minute | 100 | $0 |
 | Pay-as-you-go | 60/minute | Unlimited | $0.001/call |
 | Enterprise | Custom | Custom | Contact sales |
 
