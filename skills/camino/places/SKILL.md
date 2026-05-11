@@ -45,7 +45,7 @@ Locate places using free-form queries or structured address components. Supports
 
 **Pay-per-request via [x402](https://x402.org) (no signup, no API key):** Camino's paid endpoints accept HTTP 402 payments in USDC on Base. Any x402-capable client can call the API and settle $0.001 per request directly from a wallet — no account required.
 
-For 1,000 free calls/month with a managed API key, sign up at [https://app.getcamino.ai/skills/activate](https://app.getcamino.ai/skills/activate).
+For 100 free calls/month with a managed API key, sign up at [https://app.getcamino.ai/skills/activate](https://app.getcamino.ai/skills/activate).
 
 **Add your key to Claude Code:**
 

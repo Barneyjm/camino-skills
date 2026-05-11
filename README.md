@@ -21,7 +21,7 @@ npx clawhub@latest install [skill-name]
 
 **Pay-per-request via [x402](https://x402.org) (no signup, no API key):** Camino's paid endpoints accept HTTP 402 payments in USDC on Base. Any x402-capable client can call the API and settle $0.001 per request directly from a wallet — no account required.
 
-For 1,000 free calls/month with a managed API key, sign up at [https://app.getcamino.ai/skills/activate](https://app.getcamino.ai/skills/activate).
+For 100 free calls/month with a managed API key, sign up at [https://app.getcamino.ai/skills/activate](https://app.getcamino.ai/skills/activate).
 
 **Add your key to Claude Code:**
 
@@ -69,7 +69,7 @@ Opinionated workflows built on top of the core primitives. Each one combines mul
 
 ## Free Tier
 
-- 1,000 API calls per month
+- 100 API calls per month
 - All endpoints included
 - No credit card required
 
@@ -77,7 +77,7 @@ Opinionated workflows built on top of the core primitives. Each one combines mul
 
 | Tier | Rate Limit | Monthly Calls | Price |
 |------|------------|---------------|-------|
-| Free | 30/minute | 1,000 | $0 |
+| Free | 30/minute | 100 | $0 |
 | Pay-as-you-go | 60/minute | Unlimited | $0.001/call |
 | Enterprise | Custom | Custom | Contact sales |
 
