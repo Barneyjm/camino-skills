@@ -29,17 +29,9 @@ Locate elementary schools, high schools, and universities near any location. Use
 
 ## Setup
 
-**Instant Trial (no signup required):** Get a temporary API key with 25 calls:
+**Pay-per-request via [x402](https://x402.org) (no signup, no API key):** Camino's paid endpoints accept HTTP 402 payments in USDC on Base. Any x402-capable client can call the API and settle $0.001 per request directly from a wallet — no account required.
 
-```bash
-curl -s -X POST -H "Content-Type: application/json" \
-  -d '{"email": "you@example.com"}' \
-  https://api.getcamino.ai/trial/start
-```
-
-Returns: `{"api_key": "camino-xxx...", "calls_remaining": 25, ...}`
-
-For 1,000 free calls/month, sign up at [https://app.getcamino.ai/skills/activate](https://app.getcamino.ai/skills/activate).
+For 1,000 free calls/month with a managed API key, sign up at [https://app.getcamino.ai/skills/activate](https://app.getcamino.ai/skills/activate).
 
 **Add your key to Claude Code:**
 
