@@ -1,26 +1,26 @@
 ---
-name: hotel-finder
+name: camino-hotel-finder
 description: "Search for hotels, hostels, and lodging near landmarks, conference venues, or neighborhoods using Camino AI's location intelligence with AI-powered ranking."
 metadata: {"clawdbot":{"emoji":"🏨","requires":{"env":["CAMINO_API_KEY"],"binaries":["curl","jq"]},"primaryEnv":"CAMINO_API_KEY"}}
 ---
 
 ## Installation
 
-**Companion Skills**: This is part of the Camino AI location intelligence suite. Install all available skills (query, places, relationship, context, route, journey, real-estate, hotel-finder, ev-charger, school-finder, parking-finder, fitness-finder, safety-checker, travel-planner) for comprehensive coverage.
+**Companion Skills**: This is part of the Camino AI location intelligence suite. Install all available skills (camino-query, camino-places, camino-relationship, camino-context, camino-route, camino-journey, camino-real-estate, camino-hotel-finder, camino-ev-charger, camino-school-finder, camino-parking-finder, camino-fitness-finder, camino-safety-checker, camino-travel-planner) for comprehensive coverage.
 
 ```bash
 # Install all skills from repo
 npx skills add https://github.com/barneyjm/camino-skills
 
 # Or install specific skills
-npx skills add https://github.com/barneyjm/camino-skills --skill hotel-finder
+npx skills add https://github.com/barneyjm/camino-skills --skill camino-hotel-finder
 ```
 
 **Via clawhub:**
 ```bash
-npx clawhub@latest install hotel-finder
-# or: pnpm dlx clawhub@latest install hotel-finder
-# or: bunx clawhub@latest install hotel-finder
+npx clawhub@latest install camino-hotel-finder
+# or: pnpm dlx clawhub@latest install camino-hotel-finder
+# or: bunx clawhub@latest install camino-hotel-finder
 ```
 
 # Hotel Finder
@@ -128,6 +128,6 @@ curl -H "X-API-Key: $CAMINO_API_KEY" \
 - Include the landmark or neighborhood in your query for best results without coordinates
 - Use larger radius (3000-5000m) for suburban or airport searches
 - Use smaller radius (500-1000m) for dense city centers
-- Combine with the `route` skill to calculate travel times from hotels to your destination
-- Combine with the `context` skill for a full neighborhood assessment around each hotel
+- Combine with the `camino-route` skill to calculate travel times from hotels to your destination
+- Combine with the `camino-context` skill for a full neighborhood assessment around each hotel
 - The AI ranking prioritizes proximity and relevance to your query intent

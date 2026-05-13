@@ -1,26 +1,26 @@
 ---
-name: places
+name: camino-places
 description: "Locate places using flexible query formats - free-form search or structured address components. Returns coordinates, addresses, and optional street-level photos. Use for geocoding addresses or finding specific named places."
 metadata: {"clawdbot":{"emoji":"📌","requires":{"env":["CAMINO_API_KEY"],"binaries":["curl","jq"]},"primaryEnv":"CAMINO_API_KEY"}}
 ---
 
 ## Installation
 
-**Companion Skills**: This is part of the Camino AI location intelligence suite. Install all available skills (query, places, relationship, context, route, journey, real-estate, hotel-finder, ev-charger, school-finder, parking-finder, fitness-finder, safety-checker, travel-planner) for comprehensive coverage.
+**Companion Skills**: This is part of the Camino AI location intelligence suite. Install all available skills (camino-query, camino-places, camino-relationship, camino-context, camino-route, camino-journey, camino-real-estate, camino-hotel-finder, camino-ev-charger, camino-school-finder, camino-parking-finder, camino-fitness-finder, camino-safety-checker, camino-travel-planner) for comprehensive coverage.
 
 ```bash
 # Install all skills from repo
 npx skills add https://github.com/barneyjm/camino-skills
 
 # Or install specific skills
-npx skills add https://github.com/barneyjm/camino-skills --skill places
+npx skills add https://github.com/barneyjm/camino-skills --skill camino-places
 ```
 
 **Via clawhub:**
 ```bash
-npx clawhub@latest install places
-# or: pnpm dlx clawhub@latest install places
-# or: bunx clawhub@latest install places
+npx clawhub@latest install camino-places
+# or: pnpm dlx clawhub@latest install camino-places
+# or: bunx clawhub@latest install camino-places
 ```
 
 # Places - Flexible Place Lookup
@@ -29,7 +29,7 @@ Locate places using free-form queries or structured address components. Supports
 
 ## Places vs Query
 
-| Feature | `/places` | `/query` |
+| Feature | `/camino-places` | `/camino-query` |
 |---------|-----------|----------|
 | Method | POST | GET |
 | Input | Free-form OR structured address | Natural language with context |
@@ -38,8 +38,8 @@ Locate places using free-form queries or structured address components. Supports
 | Photos | Optional street-level imagery | No |
 | Best For | "Eiffel Tower", address lookup | "quiet cafes near Times Square" |
 
-**Use `/places`** for geocoding addresses or finding specific named places.
-**Use `/query`** for natural language queries with AI ranking.
+**Use `/camino-places`** for geocoding addresses or finding specific named places.
+**Use `/camino-query`** for natural language queries with AI ranking.
 
 ## Setup
 
@@ -81,7 +81,7 @@ Restart Claude Code.
 
 ### Via curl (direct API calls)
 
-The skill is named `places` but calls the `/search` API endpoint. For direct API calls:
+The skill is named `camino-places` but calls the `/search` API endpoint. For direct API calls:
 
 ```bash
 curl -X POST -H "X-API-Key: $CAMINO_API_KEY" \

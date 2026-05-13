@@ -1,26 +1,26 @@
 ---
-name: parking-finder
+name: camino-parking-finder
 description: "Locate parking garages, lots, and street parking near your destination using Camino AI's location intelligence with AI-powered ranking."
 metadata: {"clawdbot":{"emoji":"🅿️","requires":{"env":["CAMINO_API_KEY"],"binaries":["curl","jq"]},"primaryEnv":"CAMINO_API_KEY"}}
 ---
 
 ## Installation
 
-**Companion Skills**: This is part of the Camino AI location intelligence suite. Install all available skills (query, places, relationship, context, route, journey, real-estate, hotel-finder, ev-charger, school-finder, parking-finder, fitness-finder, safety-checker, travel-planner) for comprehensive coverage.
+**Companion Skills**: This is part of the Camino AI location intelligence suite. Install all available skills (camino-query, camino-places, camino-relationship, camino-context, camino-route, camino-journey, camino-real-estate, camino-hotel-finder, camino-ev-charger, camino-school-finder, camino-parking-finder, camino-fitness-finder, camino-safety-checker, camino-travel-planner) for comprehensive coverage.
 
 ```bash
 # Install all skills from repo
 npx skills add https://github.com/barneyjm/camino-skills
 
 # Or install specific skills
-npx skills add https://github.com/barneyjm/camino-skills --skill parking-finder
+npx skills add https://github.com/barneyjm/camino-skills --skill camino-parking-finder
 ```
 
 **Via clawhub:**
 ```bash
-npx clawhub@latest install parking-finder
-# or: pnpm dlx clawhub@latest install parking-finder
-# or: bunx clawhub@latest install parking-finder
+npx clawhub@latest install camino-parking-finder
+# or: pnpm dlx clawhub@latest install camino-parking-finder
+# or: bunx clawhub@latest install camino-parking-finder
 ```
 
 # Parking Finder
@@ -127,6 +127,6 @@ curl -H "X-API-Key: $CAMINO_API_KEY" \
 - Use a smaller radius (500-1000m) in dense urban areas where parking is nearby but hard to find
 - Use a larger radius (2000-3000m) near stadiums, airports, or suburban destinations
 - Include the venue name in your query for contextual results (e.g., "parking near Madison Square Garden")
-- Combine with the `route` skill to get walking directions from parking to your destination
-- Combine with the `relationship` skill to compare distances between multiple parking options
+- Combine with the `camino-route` skill to get walking directions from parking to your destination
+- Combine with the `camino-relationship` skill to compare distances between multiple parking options
 - Specify "parking garages" or "street parking" in the query for more targeted results

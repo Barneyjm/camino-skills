@@ -1,26 +1,26 @@
 ---
-name: real-estate
+name: camino-real-estate
 description: "Evaluate any address for home buyers and renters. Get nearby schools, transit, grocery stores, parks, restaurants, and walkability using Camino AI's location intelligence."
 metadata: {"clawdbot":{"emoji":"🏠","requires":{"env":["CAMINO_API_KEY"],"binaries":["curl","jq"]},"primaryEnv":"CAMINO_API_KEY"}}
 ---
 
 ## Installation
 
-**Companion Skills**: This is part of the Camino AI location intelligence suite. Install all available skills (query, places, relationship, context, route, journey, real-estate, hotel-finder, ev-charger, school-finder, parking-finder, fitness-finder, safety-checker, travel-planner) for comprehensive coverage.
+**Companion Skills**: This is part of the Camino AI location intelligence suite. Install all available skills (camino-query, camino-places, camino-relationship, camino-context, camino-route, camino-journey, camino-real-estate, camino-hotel-finder, camino-ev-charger, camino-school-finder, camino-parking-finder, camino-fitness-finder, camino-safety-checker, camino-travel-planner) for comprehensive coverage.
 
 ```bash
 # Install all skills from repo
 npx skills add https://github.com/barneyjm/camino-skills
 
 # Or install specific skills
-npx skills add https://github.com/barneyjm/camino-skills --skill real-estate
+npx skills add https://github.com/barneyjm/camino-skills --skill camino-real-estate
 ```
 
 **Via clawhub:**
 ```bash
-npx clawhub@latest install real-estate
-# or: pnpm dlx clawhub@latest install real-estate
-# or: bunx clawhub@latest install real-estate
+npx clawhub@latest install camino-real-estate
+# or: pnpm dlx clawhub@latest install camino-real-estate
+# or: bunx clawhub@latest install camino-real-estate
 ```
 
 # Real Estate Scout
@@ -127,6 +127,6 @@ curl -X POST -H "X-API-Key: $CAMINO_API_KEY" \
 - Use `address` for street addresses; the script will geocode them automatically
 - Use `location` with lat/lon when you already have coordinates
 - Start with a 1000m radius for suburban areas, 500m for dense urban areas
-- Combine with the `relationship` skill to calculate commute distances to workplaces
-- Combine with the `route` skill to estimate travel times to key destinations
-- Use the `school-finder` skill for more detailed school searches
+- Combine with the `camino-relationship` skill to calculate commute distances to workplaces
+- Combine with the `camino-route` skill to estimate travel times to key destinations
+- Use the `camino-school-finder` skill for more detailed school searches

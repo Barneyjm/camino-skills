@@ -1,26 +1,26 @@
 ---
-name: context
+name: camino-context
 description: "Get comprehensive context about a location including nearby places, area description, and optional weather. Use when you need to understand what's around a location or provide location-aware recommendations."
 metadata: {"clawdbot":{"emoji":"📍","requires":{"env":["CAMINO_API_KEY"],"binaries":["curl","jq"]},"primaryEnv":"CAMINO_API_KEY"}}
 ---
 
 ## Installation
 
-**Companion Skills**: This is part of the Camino AI location intelligence suite. Install all available skills (query, places, relationship, context, route, journey, real-estate, hotel-finder, ev-charger, school-finder, parking-finder, fitness-finder, safety-checker, travel-planner) for comprehensive coverage.
+**Companion Skills**: This is part of the Camino AI location intelligence suite. Install all available skills (camino-query, camino-places, camino-relationship, camino-context, camino-route, camino-journey, camino-real-estate, camino-hotel-finder, camino-ev-charger, camino-school-finder, camino-parking-finder, camino-fitness-finder, camino-safety-checker, camino-travel-planner) for comprehensive coverage.
 
 ```bash
 # Install all skills from repo
 npx skills add https://github.com/barneyjm/camino-skills
 
 # Or install specific skills
-npx skills add https://github.com/barneyjm/camino-skills --skill context
+npx skills add https://github.com/barneyjm/camino-skills --skill camino-context
 ```
 
 **Via clawhub:**
 ```bash
-npx clawhub@latest install context
-# or: pnpm dlx clawhub@latest install context
-# or: bunx clawhub@latest install context
+npx clawhub@latest install camino-context
+# or: pnpm dlx clawhub@latest install camino-context
+# or: bunx clawhub@latest install camino-context
 ```
 
 # Context - Location Analysis

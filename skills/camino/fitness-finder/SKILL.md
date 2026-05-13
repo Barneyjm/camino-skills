@@ -1,26 +1,26 @@
 ---
-name: fitness-finder
+name: camino-fitness-finder
 description: "Search for gyms, yoga studios, swimming pools, and sports facilities using Camino AI's location intelligence with AI-powered ranking."
 metadata: {"clawdbot":{"emoji":"💪","requires":{"env":["CAMINO_API_KEY"],"binaries":["curl","jq"]},"primaryEnv":"CAMINO_API_KEY"}}
 ---
 
 ## Installation
 
-**Companion Skills**: This is part of the Camino AI location intelligence suite. Install all available skills (query, places, relationship, context, route, journey, real-estate, hotel-finder, ev-charger, school-finder, parking-finder, fitness-finder, safety-checker, travel-planner) for comprehensive coverage.
+**Companion Skills**: This is part of the Camino AI location intelligence suite. Install all available skills (camino-query, camino-places, camino-relationship, camino-context, camino-route, camino-journey, camino-real-estate, camino-hotel-finder, camino-ev-charger, camino-school-finder, camino-parking-finder, camino-fitness-finder, camino-safety-checker, camino-travel-planner) for comprehensive coverage.
 
 ```bash
 # Install all skills from repo
 npx skills add https://github.com/barneyjm/camino-skills
 
 # Or install specific skills
-npx skills add https://github.com/barneyjm/camino-skills --skill fitness-finder
+npx skills add https://github.com/barneyjm/camino-skills --skill camino-fitness-finder
 ```
 
 **Via clawhub:**
 ```bash
-npx clawhub@latest install fitness-finder
-# or: pnpm dlx clawhub@latest install fitness-finder
-# or: bunx clawhub@latest install fitness-finder
+npx clawhub@latest install camino-fitness-finder
+# or: pnpm dlx clawhub@latest install camino-fitness-finder
+# or: bunx clawhub@latest install camino-fitness-finder
 ```
 
 # Gym & Fitness Finder
@@ -126,7 +126,7 @@ curl -H "X-API-Key: $CAMINO_API_KEY" \
 
 - Use specific facility types in the query for targeted results (e.g., "yoga studios", "CrossFit gyms", "swimming pools")
 - Use 1500m radius for urban areas, increase to 3000m for suburban locations
-- Combine with the `route` skill to calculate walking or cycling times to the gym
-- Combine with the `real-estate` skill when evaluating a neighborhood's fitness options
-- Combine with the `relationship` skill to compare distances between multiple facilities
-- For travelers, combine with `hotel-finder` to find lodging near fitness facilities
+- Combine with the `camino-route` skill to calculate walking or cycling times to the gym
+- Combine with the `camino-real-estate` skill when evaluating a neighborhood's fitness options
+- Combine with the `camino-relationship` skill to compare distances between multiple facilities
+- For travelers, combine with `camino-hotel-finder` to find lodging near fitness facilities

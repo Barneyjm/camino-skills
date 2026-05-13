@@ -1,26 +1,26 @@
 ---
-name: travel-planner
+name: camino-travel-planner
 description: "Plan complete day trips, walking tours, and multi-stop itineraries with time budgets using Camino AI's journey planning and route optimization."
 metadata: {"clawdbot":{"emoji":"✈️","requires":{"env":["CAMINO_API_KEY"],"binaries":["curl","jq"]},"primaryEnv":"CAMINO_API_KEY"}}
 ---
 
 ## Installation
 
-**Companion Skills**: This is part of the Camino AI location intelligence suite. Install all available skills (query, places, relationship, context, route, journey, real-estate, hotel-finder, ev-charger, school-finder, parking-finder, fitness-finder, safety-checker, travel-planner) for comprehensive coverage.
+**Companion Skills**: This is part of the Camino AI location intelligence suite. Install all available skills (camino-query, camino-places, camino-relationship, camino-context, camino-route, camino-journey, camino-real-estate, camino-hotel-finder, camino-ev-charger, camino-school-finder, camino-parking-finder, camino-fitness-finder, camino-safety-checker, camino-travel-planner) for comprehensive coverage.
 
 ```bash
 # Install all skills from repo
 npx skills add https://github.com/barneyjm/camino-skills
 
 # Or install specific skills
-npx skills add https://github.com/barneyjm/camino-skills --skill travel-planner
+npx skills add https://github.com/barneyjm/camino-skills --skill camino-travel-planner
 ```
 
 **Via clawhub:**
 ```bash
-npx clawhub@latest install travel-planner
-# or: pnpm dlx clawhub@latest install travel-planner
-# or: bunx clawhub@latest install travel-planner
+npx clawhub@latest install camino-travel-planner
+# or: pnpm dlx clawhub@latest install camino-travel-planner
+# or: bunx clawhub@latest install camino-travel-planner
 ```
 
 # Travel Planner
@@ -199,7 +199,7 @@ curl -X POST -H "X-API-Key: $CAMINO_API_KEY" \
 - Set a `time_budget` to get feasibility checks and optimization suggestions
 - Use "foot" transport for city walking tours, "bike" for cycling tours, "car" for road trips
 - Order waypoints in your preferred visiting sequence; the API will check feasibility
-- Combine with the `query` skill to discover points of interest to add as waypoints
-- Combine with the `hotel-finder` skill to find accommodation near your first or last waypoint
-- Combine with the `context` skill to learn more about each waypoint's neighborhood
+- Combine with the `camino-query` skill to discover points of interest to add as waypoints
+- Combine with the `camino-hotel-finder` skill to find accommodation near your first or last waypoint
+- Combine with the `camino-context` skill to learn more about each waypoint's neighborhood
 - For longer trips, break the itinerary into manageable day segments

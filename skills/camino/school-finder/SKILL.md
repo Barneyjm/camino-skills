@@ -1,26 +1,26 @@
 ---
-name: school-finder
+name: camino-school-finder
 description: "Locate elementary schools, high schools, and universities near any address using Camino AI's location intelligence with AI-powered ranking."
 metadata: {"clawdbot":{"emoji":"🏫","requires":{"env":["CAMINO_API_KEY"],"binaries":["curl","jq"]},"primaryEnv":"CAMINO_API_KEY"}}
 ---
 
 ## Installation
 
-**Companion Skills**: This is part of the Camino AI location intelligence suite. Install all available skills (query, places, relationship, context, route, journey, real-estate, hotel-finder, ev-charger, school-finder, parking-finder, fitness-finder, safety-checker, travel-planner) for comprehensive coverage.
+**Companion Skills**: This is part of the Camino AI location intelligence suite. Install all available skills (camino-query, camino-places, camino-relationship, camino-context, camino-route, camino-journey, camino-real-estate, camino-hotel-finder, camino-ev-charger, camino-school-finder, camino-parking-finder, camino-fitness-finder, camino-safety-checker, camino-travel-planner) for comprehensive coverage.
 
 ```bash
 # Install all skills from repo
 npx skills add https://github.com/barneyjm/camino-skills
 
 # Or install specific skills
-npx skills add https://github.com/barneyjm/camino-skills --skill school-finder
+npx skills add https://github.com/barneyjm/camino-skills --skill camino-school-finder
 ```
 
 **Via clawhub:**
 ```bash
-npx clawhub@latest install school-finder
-# or: pnpm dlx clawhub@latest install school-finder
-# or: bunx clawhub@latest install school-finder
+npx clawhub@latest install camino-school-finder
+# or: pnpm dlx clawhub@latest install camino-school-finder
+# or: bunx clawhub@latest install camino-school-finder
 ```
 
 # School Finder
@@ -127,6 +127,6 @@ curl -H "X-API-Key: $CAMINO_API_KEY" \
 - Use 1600m radius (approximately 1 mile) for elementary school searches near a home
 - Use larger radius (3000-5000m) for high school and university searches
 - Specify school type in the query for more targeted results (e.g., "elementary schools", "high schools", "universities")
-- Combine with the `real-estate` skill for a complete neighborhood evaluation
-- Combine with the `route` skill to calculate walking or driving times from home to school
-- Combine with the `relationship` skill to check distances between home and multiple schools
+- Combine with the `camino-real-estate` skill for a complete neighborhood evaluation
+- Combine with the `camino-route` skill to calculate walking or driving times from home to school
+- Combine with the `camino-relationship` skill to check distances between home and multiple schools

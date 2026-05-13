@@ -1,6 +1,10 @@
 #!/bin/bash
 # Camino AI Search API - Flexible Place Lookup
-# Usage: ./search.sh '{"query": "Eiffel Tower"}' or ./search.sh '{"city": "Paris", "country": "France"}'
+# Usage: ./places.sh '{"query": "Eiffel Tower"}' or ./places.sh '{"city": "Paris", "country": "France"}'
+#
+# /search is POST but reads its parameters from the URL query string
+# (FastAPI Query()), not from a JSON body. We translate the JSON input
+# to URL-encoded query params.
 
 set -e
 
@@ -15,8 +19,8 @@ done
 # Check if input is provided
 if [ -z "$1" ]; then
     echo "Error: JSON input required" >&2
-    echo "Usage: ./search.sh '{\"query\": \"Eiffel Tower\"}'" >&2
-    echo "   or: ./search.sh '{\"street\": \"123 Main St\", \"city\": \"New York\"}'" >&2
+    echo "Usage: ./places.sh '{\"query\": \"Eiffel Tower\"}'" >&2
+    echo "   or: ./places.sh '{\"street\": \"123 Main St\", \"city\": \"New York\"}'" >&2
     exit 1
 fi
 
@@ -51,10 +55,43 @@ if [ -z "$QUERY" ] && [ -z "$AMENITY" ] && [ -z "$STREET" ] && [ -z "$CITY" ] &&
     exit 1
 fi
 
-# Make API request
+# Build URL-encoded query string from JSON input
+append_string_param() {
+    local name="$1"
+    local value="$2"
+    if [ -n "$value" ]; then
+        local encoded=$(jq -rn --arg v "$value" '$v|@uri')
+        params="${params}&${name}=${encoded}"
+    fi
+}
+
+append_raw_param() {
+    local name="$1"
+    local value="$2"
+    if [ -n "$value" ]; then
+        params="${params}&${name}=${value}"
+    fi
+}
+
+params=""
+append_string_param query "$QUERY"
+append_string_param amenity "$AMENITY"
+append_string_param street "$STREET"
+append_string_param city "$CITY"
+append_string_param county "$COUNTY"
+append_string_param state "$STATE"
+append_string_param country "$COUNTRY"
+append_string_param postalcode "$POSTALCODE"
+
+append_raw_param limit "$(echo "$INPUT" | jq -r '.limit // empty')"
+append_raw_param include_photos "$(echo "$INPUT" | jq -r '.include_photos // empty')"
+append_raw_param photo_radius "$(echo "$INPUT" | jq -r '.photo_radius // empty')"
+append_raw_param mode "$(echo "$INPUT" | jq -r '.mode // empty')"
+
+QUERY_STRING="${params:1}"
+
+# Make API request — POST with URL query params (no body)
 curl -s -X POST \
     -H "X-API-Key: $CAMINO_API_KEY" \
-    -H "Content-Type: application/json" \
     -H "X-Client: claude-code-skill" \
-    -d "$INPUT" \
-    "https://api.getcamino.ai/search" | jq .
+    "https://api.getcamino.ai/search?${QUERY_STRING}" | jq .

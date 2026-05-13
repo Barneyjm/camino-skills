@@ -1,26 +1,26 @@
 ---
-name: relationship
+name: camino-relationship
 description: "Calculate spatial relationships between two points including distance, direction, travel time, and human-readable descriptions. Use when you need to understand how locations relate to each other."
 metadata: {"clawdbot":{"emoji":"📐","requires":{"env":["CAMINO_API_KEY"],"binaries":["curl","jq"]},"primaryEnv":"CAMINO_API_KEY"}}
 ---
 
 ## Installation
 
-**Companion Skills**: This is part of the Camino AI location intelligence suite. Install all available skills (query, places, relationship, context, route, journey, real-estate, hotel-finder, ev-charger, school-finder, parking-finder, fitness-finder, safety-checker, travel-planner) for comprehensive coverage.
+**Companion Skills**: This is part of the Camino AI location intelligence suite. Install all available skills (camino-query, camino-places, camino-relationship, camino-context, camino-route, camino-journey, camino-real-estate, camino-hotel-finder, camino-ev-charger, camino-school-finder, camino-parking-finder, camino-fitness-finder, camino-safety-checker, camino-travel-planner) for comprehensive coverage.
 
 ```bash
 # Install all skills from repo
 npx skills add https://github.com/barneyjm/camino-skills
 
 # Or install specific skills
-npx skills add https://github.com/barneyjm/camino-skills --skill relationship
+npx skills add https://github.com/barneyjm/camino-skills --skill camino-relationship
 ```
 
 **Via clawhub:**
 ```bash
-npx clawhub@latest install relationship
-# or: pnpm dlx clawhub@latest install relationship
-# or: bunx clawhub@latest install relationship
+npx clawhub@latest install camino-relationship
+# or: pnpm dlx clawhub@latest install camino-relationship
+# or: bunx clawhub@latest install camino-relationship
 ```
 
 # Relationship - Spatial Calculations

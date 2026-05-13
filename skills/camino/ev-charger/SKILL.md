@@ -1,26 +1,26 @@
 ---
-name: ev-charger
+name: camino-ev-charger
 description: "Find EV charging stations along a route or near a destination using Camino AI's location intelligence with OpenStreetMap data."
 metadata: {"clawdbot":{"emoji":"⚡","requires":{"env":["CAMINO_API_KEY"],"binaries":["curl","jq"]},"primaryEnv":"CAMINO_API_KEY"}}
 ---
 
 ## Installation
 
-**Companion Skills**: This is part of the Camino AI location intelligence suite. Install all available skills (query, places, relationship, context, route, journey, real-estate, hotel-finder, ev-charger, school-finder, parking-finder, fitness-finder, safety-checker, travel-planner) for comprehensive coverage.
+**Companion Skills**: This is part of the Camino AI location intelligence suite. Install all available skills (camino-query, camino-places, camino-relationship, camino-context, camino-route, camino-journey, camino-real-estate, camino-hotel-finder, camino-ev-charger, camino-school-finder, camino-parking-finder, camino-fitness-finder, camino-safety-checker, camino-travel-planner) for comprehensive coverage.
 
 ```bash
 # Install all skills from repo
 npx skills add https://github.com/barneyjm/camino-skills
 
 # Or install specific skills
-npx skills add https://github.com/barneyjm/camino-skills --skill ev-charger
+npx skills add https://github.com/barneyjm/camino-skills --skill camino-ev-charger
 ```
 
 **Via clawhub:**
 ```bash
-npx clawhub@latest install ev-charger
-# or: pnpm dlx clawhub@latest install ev-charger
-# or: bunx clawhub@latest install ev-charger
+npx clawhub@latest install camino-ev-charger
+# or: pnpm dlx clawhub@latest install camino-ev-charger
+# or: bunx clawhub@latest install camino-ev-charger
 ```
 
 # EV Charger Finder
@@ -126,6 +126,6 @@ curl -H "X-API-Key: $CAMINO_API_KEY" \
 
 - Use a larger radius (5000-10000m) since EV chargers are less densely distributed than other amenities
 - Include the charger network name in the query if you need a specific one (e.g., "Tesla Supercharger", "ChargePoint")
-- Combine with the `route` skill to plan charging stops along a driving route
-- Combine with the `relationship` skill to check distances from chargers to your destination
-- For road trip planning, use the `travel-planner` skill with charging waypoints
+- Combine with the `camino-route` skill to plan charging stops along a driving route
+- Combine with the `camino-relationship` skill to check distances from chargers to your destination
+- For road trip planning, use the `camino-travel-planner` skill with charging waypoints

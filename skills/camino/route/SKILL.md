@@ -1,26 +1,26 @@
 ---
-name: route
+name: camino-route
 description: "Get detailed routing between two points with distance, duration, and optional turn-by-turn directions. Use when you need navigation instructions or travel time estimates between locations."
 metadata: {"clawdbot":{"emoji":"🧭","requires":{"env":["CAMINO_API_KEY"],"binaries":["curl","jq"]},"primaryEnv":"CAMINO_API_KEY"}}
 ---
 
 ## Installation
 
-**Companion Skills**: This is part of the Camino AI location intelligence suite. Install all available skills (query, places, relationship, context, route, journey, real-estate, hotel-finder, ev-charger, school-finder, parking-finder, fitness-finder, safety-checker, travel-planner) for comprehensive coverage.
+**Companion Skills**: This is part of the Camino AI location intelligence suite. Install all available skills (camino-query, camino-places, camino-relationship, camino-context, camino-route, camino-journey, camino-real-estate, camino-hotel-finder, camino-ev-charger, camino-school-finder, camino-parking-finder, camino-fitness-finder, camino-safety-checker, camino-travel-planner) for comprehensive coverage.
 
 ```bash
 # Install all skills from repo
 npx skills add https://github.com/barneyjm/camino-skills
 
 # Or install specific skills
-npx skills add https://github.com/barneyjm/camino-skills --skill route
+npx skills add https://github.com/barneyjm/camino-skills --skill camino-route
 ```
 
 **Via clawhub:**
 ```bash
-npx clawhub@latest install route
-# or: pnpm dlx clawhub@latest install route
-# or: bunx clawhub@latest install route
+npx clawhub@latest install camino-route
+# or: pnpm dlx clawhub@latest install camino-route
+# or: bunx clawhub@latest install camino-route
 ```
 
 # Route - Point-to-Point Navigation

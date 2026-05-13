@@ -67,6 +67,7 @@ build_query_string() {
     local answer=$(echo "$INPUT" | jq -r '.answer // empty')
     local time=$(echo "$INPUT" | jq -r '.time // empty')
     local mode=$(echo "$INPUT" | jq -r '.mode // empty')
+    local engine=$(echo "$INPUT" | jq -r '.engine // empty')
 
     [ -n "$lat" ] && params="${params}&lat=${lat}"
     [ -n "$lon" ] && params="${params}&lon=${lon}"
@@ -80,6 +81,7 @@ build_query_string() {
         params="${params}&time=${encoded_time}"
     fi
     [ -n "$mode" ] && params="${params}&mode=${mode}"
+    [ -n "$engine" ] && params="${params}&engine=${engine}"
 
     # Remove leading &
     echo "${params:1}"
