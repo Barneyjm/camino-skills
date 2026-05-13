@@ -18,9 +18,9 @@ npx skills add https://github.com/barneyjm/camino-skills --skill context
 
 **Via clawhub:**
 ```bash
-npx clawhub@latest install context
-# or: pnpm dlx clawhub@latest install context
-# or: bunx clawhub@latest install context
+npx clawhub@latest install camino-context
+# or: pnpm dlx clawhub@latest install camino-context
+# or: bunx clawhub@latest install camino-context
 ```
 
 # Context - Location Analysis

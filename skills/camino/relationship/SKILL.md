@@ -18,9 +18,9 @@ npx skills add https://github.com/barneyjm/camino-skills --skill relationship
 
 **Via clawhub:**
 ```bash
-npx clawhub@latest install relationship
-# or: pnpm dlx clawhub@latest install relationship
-# or: bunx clawhub@latest install relationship
+npx clawhub@latest install camino-relationship
+# or: pnpm dlx clawhub@latest install camino-relationship
+# or: bunx clawhub@latest install camino-relationship
 ```
 
 # Relationship - Spatial Calculations

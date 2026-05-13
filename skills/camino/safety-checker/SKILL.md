@@ -18,9 +18,9 @@ npx skills add https://github.com/barneyjm/camino-skills --skill safety-checker
 
 **Via clawhub:**
 ```bash
-npx clawhub@latest install safety-checker
-# or: pnpm dlx clawhub@latest install safety-checker
-# or: bunx clawhub@latest install safety-checker
+npx clawhub@latest install camino-safety-checker
+# or: pnpm dlx clawhub@latest install camino-safety-checker
+# or: bunx clawhub@latest install camino-safety-checker
 ```
 
 # Late Night Safety

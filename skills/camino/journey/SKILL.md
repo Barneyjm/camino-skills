@@ -18,9 +18,9 @@ npx skills add https://github.com/barneyjm/camino-skills --skill journey
 
 **Via clawhub:**
 ```bash
-npx clawhub@latest install journey
-# or: pnpm dlx clawhub@latest install journey
-# or: bunx clawhub@latest install journey
+npx clawhub@latest install camino-journey
+# or: pnpm dlx clawhub@latest install camino-journey
+# or: bunx clawhub@latest install camino-journey
 ```
 
 # Journey - Multi-Stop Planning

@@ -18,9 +18,9 @@ npx skills add https://github.com/barneyjm/camino-skills --skill real-estate
 
 **Via clawhub:**
 ```bash
-npx clawhub@latest install real-estate
-# or: pnpm dlx clawhub@latest install real-estate
-# or: bunx clawhub@latest install real-estate
+npx clawhub@latest install camino-real-estate
+# or: pnpm dlx clawhub@latest install camino-real-estate
+# or: bunx clawhub@latest install camino-real-estate
 ```
 
 # Real Estate Scout

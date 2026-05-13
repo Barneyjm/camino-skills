@@ -18,9 +18,9 @@ npx skills add https://github.com/barneyjm/camino-skills --skill school-finder
 
 **Via clawhub:**
 ```bash
-npx clawhub@latest install school-finder
-# or: pnpm dlx clawhub@latest install school-finder
-# or: bunx clawhub@latest install school-finder
+npx clawhub@latest install camino-school-finder
+# or: pnpm dlx clawhub@latest install camino-school-finder
+# or: bunx clawhub@latest install camino-school-finder
 ```
 
 # School Finder

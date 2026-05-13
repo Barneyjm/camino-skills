@@ -18,9 +18,9 @@ npx skills add https://github.com/barneyjm/camino-skills --skill hotel-finder
 
 **Via clawhub:**
 ```bash
-npx clawhub@latest install hotel-finder
-# or: pnpm dlx clawhub@latest install hotel-finder
-# or: bunx clawhub@latest install hotel-finder
+npx clawhub@latest install camino-hotel-finder
+# or: pnpm dlx clawhub@latest install camino-hotel-finder
+# or: bunx clawhub@latest install camino-hotel-finder
 ```
 
 # Hotel Finder

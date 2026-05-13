@@ -18,9 +18,9 @@ npx skills add https://github.com/barneyjm/camino-skills --skill travel-planner
 
 **Via clawhub:**
 ```bash
-npx clawhub@latest install travel-planner
-# or: pnpm dlx clawhub@latest install travel-planner
-# or: bunx clawhub@latest install travel-planner
+npx clawhub@latest install camino-travel-planner
+# or: pnpm dlx clawhub@latest install camino-travel-planner
+# or: bunx clawhub@latest install camino-travel-planner
 ```
 
 # Travel Planner

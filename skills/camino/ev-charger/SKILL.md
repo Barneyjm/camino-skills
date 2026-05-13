@@ -18,9 +18,9 @@ npx skills add https://github.com/barneyjm/camino-skills --skill ev-charger
 
 **Via clawhub:**
 ```bash
-npx clawhub@latest install ev-charger
-# or: pnpm dlx clawhub@latest install ev-charger
-# or: bunx clawhub@latest install ev-charger
+npx clawhub@latest install camino-ev-charger
+# or: pnpm dlx clawhub@latest install camino-ev-charger
+# or: bunx clawhub@latest install camino-ev-charger
 ```
 
 # EV Charger Finder

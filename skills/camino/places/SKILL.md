@@ -18,9 +18,9 @@ npx skills add https://github.com/barneyjm/camino-skills --skill places
 
 **Via clawhub:**
 ```bash
-npx clawhub@latest install places
-# or: pnpm dlx clawhub@latest install places
-# or: bunx clawhub@latest install places
+npx clawhub@latest install camino-places
+# or: pnpm dlx clawhub@latest install camino-places
+# or: bunx clawhub@latest install camino-places
 ```
 
 # Places - Flexible Place Lookup

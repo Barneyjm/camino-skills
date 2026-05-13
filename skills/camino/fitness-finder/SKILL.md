@@ -18,9 +18,9 @@ npx skills add https://github.com/barneyjm/camino-skills --skill fitness-finder
 
 **Via clawhub:**
 ```bash
-npx clawhub@latest install fitness-finder
-# or: pnpm dlx clawhub@latest install fitness-finder
-# or: bunx clawhub@latest install fitness-finder
+npx clawhub@latest install camino-fitness-finder
+# or: pnpm dlx clawhub@latest install camino-fitness-finder
+# or: bunx clawhub@latest install camino-fitness-finder
 ```
 
 # Gym & Fitness Finder

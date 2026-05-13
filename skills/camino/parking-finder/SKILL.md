@@ -18,9 +18,9 @@ npx skills add https://github.com/barneyjm/camino-skills --skill parking-finder
 
 **Via clawhub:**
 ```bash
-npx clawhub@latest install parking-finder
-# or: pnpm dlx clawhub@latest install parking-finder
-# or: bunx clawhub@latest install parking-finder
+npx clawhub@latest install camino-parking-finder
+# or: pnpm dlx clawhub@latest install camino-parking-finder
+# or: bunx clawhub@latest install camino-parking-finder
 ```
 
 # Parking Finder

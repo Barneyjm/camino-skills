@@ -18,9 +18,9 @@ npx skills add https://github.com/barneyjm/camino-skills --skill query
 
 **Via clawhub:**
 ```bash
-npx clawhub@latest install query
-# or: pnpm dlx clawhub@latest install query
-# or: bunx clawhub@latest install query
+npx clawhub@latest install camino-query
+# or: pnpm dlx clawhub@latest install camino-query
+# or: bunx clawhub@latest install camino-query
 ```
 
 # Query - Natural Language Place Search

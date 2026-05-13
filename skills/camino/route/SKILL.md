@@ -18,9 +18,9 @@ npx skills add https://github.com/barneyjm/camino-skills --skill route
 
 **Via clawhub:**
 ```bash
-npx clawhub@latest install route
-# or: pnpm dlx clawhub@latest install route
-# or: bunx clawhub@latest install route
+npx clawhub@latest install camino-route
+# or: pnpm dlx clawhub@latest install camino-route
+# or: bunx clawhub@latest install camino-route
 ```
 
 # Route - Point-to-Point Navigation
