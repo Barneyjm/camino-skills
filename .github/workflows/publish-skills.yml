@@ -23,4 +23,4 @@ jobs:
         run: |
           echo "Token prefix: ${CLAWHUB_TOKEN:0:10}..."
           npx clawhub@latest login --token "$CLAWHUB_TOKEN" --no-browser
-          npx clawhub@latest sync --all --no-input --dry-run
+          npx clawhub@latest sync --all --no-input --dry-run --root skills/camino
