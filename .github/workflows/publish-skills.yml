@@ -5,7 +5,16 @@ on:
     branches: [main]
     paths:
       - 'skills/**'
+      - '.claude-plugin/plugin.json'
+      - '.github/workflows/publish-skills.yml'
   workflow_dispatch:
+    inputs:
+      version:
+        description: 'Semver version to publish (overrides plugin.json)'
+        required: false
+      changelog:
+        description: 'Changelog text attached to every published skill'
+        required: false
 
 jobs:
   publish:
@@ -17,10 +26,34 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Publish to ClawHub
+      - name: Publish each skill
         env:
           CLAWHUB_TOKEN: ${{ secrets.CLAWHUB_TOKEN }}
+          INPUT_VERSION: ${{ github.event.inputs.version }}
+          INPUT_CHANGELOG: ${{ github.event.inputs.changelog }}
         run: |
-          echo "Token prefix: ${CLAWHUB_TOKEN:0:10}..."
+          set -e
+
+          VERSION="$INPUT_VERSION"
+          if [ -z "$VERSION" ]; then
+            VERSION=$(jq -r .version .claude-plugin/plugin.json)
+          fi
+          CHANGELOG="${INPUT_CHANGELOG:-Sync from camino-skills@${VERSION}}"
+          echo "Publishing all camino-* skills at v${VERSION}"
+
           npx clawhub@latest login --token "$CLAWHUB_TOKEN" --no-browser
-          npx clawhub@latest sync --all --no-input --dry-run --root skills/camino
+
+          # Existing skills were uploaded manually before the CLI worked, so
+          # `clawhub sync` reports them as NEW (no .clawhub/origin.json links
+          # the local folder to a registered slug). `publish` is the
+          # imperative form that pushes to a known slug, so we loop per skill.
+          for dir in skills/camino/*/; do
+            name=$(basename "$dir")
+            slug="camino-${name}"
+            echo "::group::Publish ${slug} @ ${VERSION}"
+            npx clawhub@latest publish "$dir" \
+              --slug "$slug" \
+              --version "$VERSION" \
+              --changelog "$CHANGELOG"
+            echo "::endgroup::"
+          done
