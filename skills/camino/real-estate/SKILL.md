@@ -13,7 +13,7 @@ metadata: {"clawdbot":{"emoji":"🏠","requires":{"env":["CAMINO_API_KEY"],"bina
 npx skills add https://github.com/barneyjm/camino-skills
 
 # Or install specific skills
-npx skills add https://github.com/barneyjm/camino-skills --skill real-estate
+npx skills add https://github.com/barneyjm/camino-skills --skill camino-real-estate
 ```
 
 **Via clawhub:**
@@ -127,6 +127,6 @@ curl -X POST -H "X-API-Key: $CAMINO_API_KEY" \
 - Use `address` for street addresses; the script will geocode them automatically
 - Use `location` with lat/lon when you already have coordinates
 - Start with a 1000m radius for suburban areas, 500m for dense urban areas
-- Combine with the `relationship` skill to calculate commute distances to workplaces
-- Combine with the `route` skill to estimate travel times to key destinations
-- Use the `school-finder` skill for more detailed school searches
+- Combine with the `camino-relationship` skill to calculate commute distances to workplaces
+- Combine with the `camino-route` skill to estimate travel times to key destinations
+- Use the `camino-school-finder` skill for more detailed school searches

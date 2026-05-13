@@ -13,7 +13,7 @@ metadata: {"clawdbot":{"emoji":"🏫","requires":{"env":["CAMINO_API_KEY"],"bina
 npx skills add https://github.com/barneyjm/camino-skills
 
 # Or install specific skills
-npx skills add https://github.com/barneyjm/camino-skills --skill school-finder
+npx skills add https://github.com/barneyjm/camino-skills --skill camino-school-finder
 ```
 
 **Via clawhub:**
@@ -127,6 +127,6 @@ curl -H "X-API-Key: $CAMINO_API_KEY" \
 - Use 1600m radius (approximately 1 mile) for elementary school searches near a home
 - Use larger radius (3000-5000m) for high school and university searches
 - Specify school type in the query for more targeted results (e.g., "elementary schools", "high schools", "universities")
-- Combine with the `real-estate` skill for a complete neighborhood evaluation
-- Combine with the `route` skill to calculate walking or driving times from home to school
-- Combine with the `relationship` skill to check distances between home and multiple schools
+- Combine with the `camino-real-estate` skill for a complete neighborhood evaluation
+- Combine with the `camino-route` skill to calculate walking or driving times from home to school
+- Combine with the `camino-relationship` skill to check distances between home and multiple schools

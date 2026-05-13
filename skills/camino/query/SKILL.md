@@ -13,7 +13,7 @@ metadata: {"clawdbot":{"emoji":"🔍","requires":{"env":["CAMINO_API_KEY"],"bina
 npx skills add https://github.com/barneyjm/camino-skills
 
 # Or install specific skills
-npx skills add https://github.com/barneyjm/camino-skills --skill query
+npx skills add https://github.com/barneyjm/camino-skills --skill camino-query
 ```
 
 **Via clawhub:**

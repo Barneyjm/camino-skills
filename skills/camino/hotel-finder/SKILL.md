@@ -13,7 +13,7 @@ metadata: {"clawdbot":{"emoji":"🏨","requires":{"env":["CAMINO_API_KEY"],"bina
 npx skills add https://github.com/barneyjm/camino-skills
 
 # Or install specific skills
-npx skills add https://github.com/barneyjm/camino-skills --skill hotel-finder
+npx skills add https://github.com/barneyjm/camino-skills --skill camino-hotel-finder
 ```
 
 **Via clawhub:**
@@ -128,6 +128,6 @@ curl -H "X-API-Key: $CAMINO_API_KEY" \
 - Include the landmark or neighborhood in your query for best results without coordinates
 - Use larger radius (3000-5000m) for suburban or airport searches
 - Use smaller radius (500-1000m) for dense city centers
-- Combine with the `route` skill to calculate travel times from hotels to your destination
-- Combine with the `context` skill for a full neighborhood assessment around each hotel
+- Combine with the `camino-route` skill to calculate travel times from hotels to your destination
+- Combine with the `camino-context` skill for a full neighborhood assessment around each hotel
 - The AI ranking prioritizes proximity and relevance to your query intent

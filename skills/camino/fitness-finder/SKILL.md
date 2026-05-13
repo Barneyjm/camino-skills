@@ -13,7 +13,7 @@ metadata: {"clawdbot":{"emoji":"💪","requires":{"env":["CAMINO_API_KEY"],"bina
 npx skills add https://github.com/barneyjm/camino-skills
 
 # Or install specific skills
-npx skills add https://github.com/barneyjm/camino-skills --skill fitness-finder
+npx skills add https://github.com/barneyjm/camino-skills --skill camino-fitness-finder
 ```
 
 **Via clawhub:**
@@ -126,7 +126,7 @@ curl -H "X-API-Key: $CAMINO_API_KEY" \
 
 - Use specific facility types in the query for targeted results (e.g., "yoga studios", "CrossFit gyms", "swimming pools")
 - Use 1500m radius for urban areas, increase to 3000m for suburban locations
-- Combine with the `route` skill to calculate walking or cycling times to the gym
-- Combine with the `real-estate` skill when evaluating a neighborhood's fitness options
-- Combine with the `relationship` skill to compare distances between multiple facilities
-- For travelers, combine with `hotel-finder` to find lodging near fitness facilities
+- Combine with the `camino-route` skill to calculate walking or cycling times to the gym
+- Combine with the `camino-real-estate` skill when evaluating a neighborhood's fitness options
+- Combine with the `camino-relationship` skill to compare distances between multiple facilities
+- For travelers, combine with `camino-hotel-finder` to find lodging near fitness facilities

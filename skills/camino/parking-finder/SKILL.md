@@ -13,7 +13,7 @@ metadata: {"clawdbot":{"emoji":"🅿️","requires":{"env":["CAMINO_API_KEY"],"b
 npx skills add https://github.com/barneyjm/camino-skills
 
 # Or install specific skills
-npx skills add https://github.com/barneyjm/camino-skills --skill parking-finder
+npx skills add https://github.com/barneyjm/camino-skills --skill camino-parking-finder
 ```
 
 **Via clawhub:**
@@ -127,6 +127,6 @@ curl -H "X-API-Key: $CAMINO_API_KEY" \
 - Use a smaller radius (500-1000m) in dense urban areas where parking is nearby but hard to find
 - Use a larger radius (2000-3000m) near stadiums, airports, or suburban destinations
 - Include the venue name in your query for contextual results (e.g., "parking near Madison Square Garden")
-- Combine with the `route` skill to get walking directions from parking to your destination
-- Combine with the `relationship` skill to compare distances between multiple parking options
+- Combine with the `camino-route` skill to get walking directions from parking to your destination
+- Combine with the `camino-relationship` skill to compare distances between multiple parking options
 - Specify "parking garages" or "street parking" in the query for more targeted results

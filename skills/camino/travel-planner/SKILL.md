@@ -13,7 +13,7 @@ metadata: {"clawdbot":{"emoji":"✈️","requires":{"env":["CAMINO_API_KEY"],"bi
 npx skills add https://github.com/barneyjm/camino-skills
 
 # Or install specific skills
-npx skills add https://github.com/barneyjm/camino-skills --skill travel-planner
+npx skills add https://github.com/barneyjm/camino-skills --skill camino-travel-planner
 ```
 
 **Via clawhub:**
@@ -199,7 +199,7 @@ curl -X POST -H "X-API-Key: $CAMINO_API_KEY" \
 - Set a `time_budget` to get feasibility checks and optimization suggestions
 - Use "foot" transport for city walking tours, "bike" for cycling tours, "car" for road trips
 - Order waypoints in your preferred visiting sequence; the API will check feasibility
-- Combine with the `query` skill to discover points of interest to add as waypoints
-- Combine with the `hotel-finder` skill to find accommodation near your first or last waypoint
-- Combine with the `context` skill to learn more about each waypoint's neighborhood
+- Combine with the `camino-query` skill to discover points of interest to add as waypoints
+- Combine with the `camino-hotel-finder` skill to find accommodation near your first or last waypoint
+- Combine with the `camino-context` skill to learn more about each waypoint's neighborhood
 - For longer trips, break the itinerary into manageable day segments

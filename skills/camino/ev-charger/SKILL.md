@@ -13,7 +13,7 @@ metadata: {"clawdbot":{"emoji":"⚡","requires":{"env":["CAMINO_API_KEY"],"binar
 npx skills add https://github.com/barneyjm/camino-skills
 
 # Or install specific skills
-npx skills add https://github.com/barneyjm/camino-skills --skill ev-charger
+npx skills add https://github.com/barneyjm/camino-skills --skill camino-ev-charger
 ```
 
 **Via clawhub:**
@@ -126,6 +126,6 @@ curl -H "X-API-Key: $CAMINO_API_KEY" \
 
 - Use a larger radius (5000-10000m) since EV chargers are less densely distributed than other amenities
 - Include the charger network name in the query if you need a specific one (e.g., "Tesla Supercharger", "ChargePoint")
-- Combine with the `route` skill to plan charging stops along a driving route
-- Combine with the `relationship` skill to check distances from chargers to your destination
-- For road trip planning, use the `travel-planner` skill with charging waypoints
+- Combine with the `camino-route` skill to plan charging stops along a driving route
+- Combine with the `camino-relationship` skill to check distances from chargers to your destination
+- For road trip planning, use the `camino-travel-planner` skill with charging waypoints
