@@ -84,6 +84,7 @@ curl -H "X-API-Key: $CAMINO_API_KEY" \
 | time | string | No | - | Temporal query: "2020-01-01", "2020..", or "2020..2024" |
 | osm_ids | string | No | - | Comma-separated OSM IDs (e.g., "node/123,way/456") |
 | mode | string | No | "basic" | "basic" (OSM only) or "advanced" (web enrichment) |
+| engine | string | No | auto | Backend: "overture" (BigQuery, default) or "osm" (Overpass). Auto-routes to "osm" when `osm_ids` or `time` are set. |
 
 *Either `query` or `osm_ids` is required.
 
