@@ -45,12 +45,12 @@ The 6 foundational primitives that map directly to the Camino API — search, ge
 
 | Skill | Description | Example |
 |-------|-------------|---------|
-| `/query` | Natural language place search with AI ranking | `"quiet coffee shops with wifi near Times Square"` |
-| `/places` | Geocoding & place lookup with optional street-level photos | `"Eiffel Tower"` or structured address components |
-| `/relationship` | Distance, direction, and travel time between two points | Calculate commute time between home and office |
-| `/context` | Location analysis with nearby places and area description | Understand what's around a destination |
-| `/route` | Point-to-point navigation with turn-by-turn directions | Walking directions from hotel to conference |
-| `/journey` | Multi-stop trip planning with route optimization | Plan a 3-hour walking tour of Paris landmarks |
+| `/camino-query` | Natural language place search with AI ranking | `"quiet coffee shops with wifi near Times Square"` |
+| `/camino-places` | Geocoding & place lookup with optional street-level photos | `"Eiffel Tower"` or structured address components |
+| `/camino-relationship` | Distance, direction, and travel time between two points | Calculate commute time between home and office |
+| `/camino-context` | Location analysis with nearby places and area description | Understand what's around a destination |
+| `/camino-route` | Point-to-point navigation with turn-by-turn directions | Walking directions from hotel to conference |
+| `/camino-journey` | Multi-stop trip planning with route optimization | Plan a 3-hour walking tour of Paris landmarks |
 
 ### Composite Skills
 
@@ -58,14 +58,14 @@ Opinionated workflows built on top of the core primitives. Each one combines mul
 
 | Skill | Description | Example |
 |-------|-------------|---------|
-| `/real-estate` | Evaluate addresses for home buyers and renters | `"Evaluate 350 Fifth Ave, New York for walkability and schools"` |
-| `/hotel-finder` | Search for hotels and lodging near landmarks or venues | `"Hotels near the convention center in Austin"` |
-| `/ev-charger` | Find EV charging stations along a route or near a destination | `"EV chargers near SFO airport"` |
-| `/school-finder` | Locate schools and universities near any address | `"Elementary schools within 1 mile of 123 Oak St, Palo Alto"` |
-| `/parking-finder` | Find parking garages, lots, and street parking | `"Parking near Madison Square Garden"` |
-| `/fitness-finder` | Search for gyms, yoga studios, pools, and sports facilities | `"Yoga studios near downtown Denver"` |
-| `/safety-checker` | Find 24-hour businesses, transit, police, and hospitals for late-night safety | `"Safe well-lit areas near Penn Station at midnight"` |
-| `/travel-planner` | Plan day trips, walking tours, and multi-stop itineraries | `"Plan a 6-hour walking tour of Rome"` |
+| `/camino-real-estate` | Evaluate addresses for home buyers and renters | `"Evaluate 350 Fifth Ave, New York for walkability and schools"` |
+| `/camino-hotel-finder` | Search for hotels and lodging near landmarks or venues | `"Hotels near the convention center in Austin"` |
+| `/camino-ev-charger` | Find EV charging stations along a route or near a destination | `"EV chargers near SFO airport"` |
+| `/camino-school-finder` | Locate schools and universities near any address | `"Elementary schools within 1 mile of 123 Oak St, Palo Alto"` |
+| `/camino-parking-finder` | Find parking garages, lots, and street parking | `"Parking near Madison Square Garden"` |
+| `/camino-fitness-finder` | Search for gyms, yoga studios, pools, and sports facilities | `"Yoga studios near downtown Denver"` |
+| `/camino-safety-checker` | Find 24-hour businesses, transit, police, and hospitals for late-night safety | `"Safe well-lit areas near Penn Station at midnight"` |
+| `/camino-travel-planner` | Plan day trips, walking tours, and multi-stop itineraries | `"Plan a 6-hour walking tour of Rome"` |
 
 ## Free Tier
 

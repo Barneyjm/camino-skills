@@ -1,12 +1,12 @@
 ---
-name: journey
+name: camino-journey
 description: "Plan multi-waypoint journeys with route optimization, feasibility analysis, and time budget constraints. Use when you need to plan trips with multiple stops or check if an itinerary is achievable."
 metadata: {"clawdbot":{"emoji":"🗺️","requires":{"env":["CAMINO_API_KEY"],"binaries":["curl","jq"]},"primaryEnv":"CAMINO_API_KEY"}}
 ---
 
 ## Installation
 
-**Companion Skills**: This is part of the Camino AI location intelligence suite. Install all available skills (query, places, relationship, context, route, journey, real-estate, hotel-finder, ev-charger, school-finder, parking-finder, fitness-finder, safety-checker, travel-planner) for comprehensive coverage.
+**Companion Skills**: This is part of the Camino AI location intelligence suite. Install all available skills (camino-query, camino-places, camino-relationship, camino-context, camino-route, camino-journey, camino-real-estate, camino-hotel-finder, camino-ev-charger, camino-school-finder, camino-parking-finder, camino-fitness-finder, camino-safety-checker, camino-travel-planner) for comprehensive coverage.
 
 ```bash
 # Install all skills from repo

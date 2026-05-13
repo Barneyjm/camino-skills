@@ -1,12 +1,12 @@
 ---
-name: school-finder
+name: camino-school-finder
 description: "Locate elementary schools, high schools, and universities near any address using Camino AI's location intelligence with AI-powered ranking."
 metadata: {"clawdbot":{"emoji":"🏫","requires":{"env":["CAMINO_API_KEY"],"binaries":["curl","jq"]},"primaryEnv":"CAMINO_API_KEY"}}
 ---
 
 ## Installation
 
-**Companion Skills**: This is part of the Camino AI location intelligence suite. Install all available skills (query, places, relationship, context, route, journey, real-estate, hotel-finder, ev-charger, school-finder, parking-finder, fitness-finder, safety-checker, travel-planner) for comprehensive coverage.
+**Companion Skills**: This is part of the Camino AI location intelligence suite. Install all available skills (camino-query, camino-places, camino-relationship, camino-context, camino-route, camino-journey, camino-real-estate, camino-hotel-finder, camino-ev-charger, camino-school-finder, camino-parking-finder, camino-fitness-finder, camino-safety-checker, camino-travel-planner) for comprehensive coverage.
 
 ```bash
 # Install all skills from repo
